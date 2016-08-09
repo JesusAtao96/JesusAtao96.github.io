@@ -1,0 +1,27 @@
+body{
+	background: #252527;
+}
+
+#titulo{
+	text-align: center;
+	color: #FFFFFF;
+}
+
+#subtitulo{
+	text-align: center;
+	color: #FFFFFF;
+}
+
+.textw{
+	color: #FFFFFF;
+}
+
+.navbar {
+    background-color: #3F729B !important;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        background-color: #3F729B !important;
+    }
+}
