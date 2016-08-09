@@ -1,0 +1,277 @@
+<div class="navbar navbar-info" style="background: #33B5E5;">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+    </div>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="#/" class="serifbar">
+                    <center><i class="material-icons hidden-xs">home</i>
+                        <br class="hidden-xs"><span>Inicio</span></center>
+                </a>
+            </li>
+            <li>
+                <a href="#/productos" class="serifbar">
+                    <center><i class="material-icons hidden-xs">more</i>
+                        <br class="hidden-xs"><span>Productos</span></center>
+                </a>
+            </li>
+            <li ng-show="online">
+                <a href="#/crear" class="serifbar">
+                    <center><i class="material-icons hidden-xs">palette</i>
+                        <br class="hidden-xs"><span>Crear</span></center>
+                </a>
+            </li>
+            <li>
+                <a href="#/buscar" class="serifbar">
+                    <center><i class="material-icons hidden-xs">search</i>
+                        <br class="hidden-xs"><span>Buscar Usuario</span></center>
+                </a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="active" ng-show="online">
+                <a href="#/compras" class="serifbar">
+                    <center><i class="material-icons hidden-xs">shopping_cart</i>
+                        <br class="hidden-xs"><span>Comprar</span></center>
+                </a>
+            </li>
+            <li ng-hide="online">
+                <a href="#/login" class="serifbar">
+                    <center><i class="material-icons hidden-xs">input</i>
+                        <br class="hidden-xs"><span>Iniciar Sesión</span></center>
+                </a>
+            </li>
+            <li ng-hide="online">
+                <a href="#/registro" class="serifbar">
+                    <center><i class="material-icons hidden-xs">person_add</i>
+                        <br class="hidden-xs"><span>Registrarse</span></center>
+                </a>
+            </li>
+            <li class="dropdown" ng-show="online">
+                <a href="javascript:void(0)" data-target="#" class="dropdown-toggle serifbar" data-toggle="dropdown">
+                    <center><i class="material-icons hidden-xs">face</i>
+                        <br class="hidden-xs"><span>Mi Cuenta</span><b class="caret"></b></center>
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="divider"></li>
+                    <li>
+                        <center><img src="{{perfil.img}}" class="img-circle" style="width: 60px; height: 60px;" ng-show="online"></center>
+                    </li>
+                    <li>
+                        <a href="#/perfil" class="serifdd"><center>{{perfil.usuario}}</center></a>
+                    </li>
+                    <li>
+                        <a href="#/configuracion" ng-show="online" class="serifdd"><center>Configuración</center></a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="javascript:void(0)" ng-click="logout()" ng-show="online" class="serifdd"><center>Cerrar Sesión</center></a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</div>
+<ngcart-cart class="serif"></ngcart-cart>
+<hr/>
+<div class="container-fluid serif">
+    <div class="col-md-12">
+        <center>
+            <div class="jumbotron" style="width: 600px; max-width: 100%;">
+                <form class="form-horizontal">
+                    <legend>Checkout</legend>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="material-icons">pets</i></span>
+                            <select class="form-control" ng-model="talla">
+                                <option value="--Seleccione--" selected="selected">--Talla Prenda(s)--</option>
+                                <option value="XS">XS</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                                <option value="XXL">XXL</option>
+                            </select>
+                            <span class="input-group-addon">
+                                <a class="text-info" data-toggle="modal" data-target="#complete-dialog">
+                                    <i class="material-icons">info</i>
+                                </a>
+                                <div id="complete-dialog" class="modal fade" tabindex="-1">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                <h4 class="modal-title">Información de las tallas</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="table-responsive">
+                                                    <table class="table table-striped table-hover ">
+                                                        <thead>
+                                                            <tr>
+                                                                <th><center>#</center></th>
+                                                                <th><center>Largo de espalda</center></th>
+                                                                <th><center>Contorno de pecho</center></th>
+                                                                <th><center>Contorno de cuello</center></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr class="warning">
+                                                                <td>XS</td>
+                                                                <td>20 cm</td>
+                                                                <td>31 cm</td>
+                                                                <td>21 cm</td>
+                                                            </tr>
+                                                            <tr class="warning">
+                                                                <td>S</td>
+                                                                <td>25 cm</td>
+                                                                <td>39 cm</td>
+                                                                <td>26 cm</td>
+                                                            </tr>
+                                                            <tr class="warning">
+                                                                <td>M</td>
+                                                                <td>30 cm</td>
+                                                                <td>45 cm</td>
+                                                                <td>30 cm</td>
+                                                            </tr>
+                                                            <tr class="warning">
+                                                                <td>L</td>
+                                                                <td>35 cm</td>
+                                                                <td>53 cm</td>
+                                                                <td>34 cm</td>
+                                                            </tr>
+                                                            <tr class="warning">
+                                                                <td>XL</td>
+                                                                <td>40 cm</td>
+                                                                <td>59 cm</td>
+                                                                <td>38 cm</td>
+                                                            </tr>
+                                                            <tr class="warning">
+                                                                <td>XXL</td>
+                                                                <td>45 cm</td>
+                                                                <td>67 cm</td>
+                                                                <td>43 cm</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Cerrar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </span>
+                        </div>
+                        <br>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="mdi-social-person-outline"></i></span>
+                            <input type="text" class="form-control" id="pUsuario" ng-model="perfil.usuario" placeholder="Nombres y Apellidos" disabled>
+                        </div>
+                        <br>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="mdi-communication-email"></i></span>
+                            <input type="email" ng-model="perfil.email" id="pEmail" class="form-control" placeholder="Email" required>
+                        </div>
+                        <br>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="mdi-maps-local-phone"></i></span>
+                            <input type="tel" class="form-control" id="pTelefono" ng-model="perfil.telefono" numbers-only placeholder="Telefono" required>
+                        </div>
+                        <br>
+                        <div class="input-group">
+                                <span class="input-group-addon"><i class="mdi-maps-pin-drop"></i></span>
+                                <select class="form-control" id="select">
+                                    <option value="--Seleccione--" selected="selected">--Seleccione--</option>
+                                    <option value="Ancón">Ancón</option>
+                                    <option value="Ate">Ate</option>
+                                    <option value="Barranco">Barranco</option>
+                                    <option value="Breña">Breña</option>
+                                    <option value="Carabayllo">Carabayllo</option>
+                                    <option value="Chaclacayo">Chaclacayo</option>
+                                    <option value="Chorrillos">Chorrillos</option>
+                                    <option value="Cieneguilla">Cieneguilla</option>
+                                    <option value="Comas">Comas</option>
+                                    <option value="El Agustino">El Agustino</option>
+                                    <option value="Independencia">Independencia</option>
+                                    <option value="Jesús María">Jesús María</option>
+                                    <option value="La Molina">La Molina</option>
+                                    <option value="La Victoria">La Victoria</option>
+                                    <option value="Lima">Lima</option>
+                                    <option value="Lince">Lince</option>
+                                    <option value="Los Olivos">Los Olivos</option>
+                                    <option value="Lurigancho">Lurigancho</option>
+                                    <option value="Lurín">Lurín</option>
+                                    <option value="Magdalena del Mar">Magdalena del Mar</option>
+                                    <option value="Miraflores">Miraflores</option>
+                                    <option value="Pachacamac">Pachacamac</option>
+                                    <option value="Pucusana">Pucusana</option>
+                                    <option value="Pueblo Libre">Pueblo Libre</option>
+                                    <option value="Puente Piedra">Puente Piedra</option>
+                                    <option value="Punta Hermosa">Punta Hermosa</option>
+                                    <option value="Punta Negra">Punta Negra</option>
+                                    <option value="Rímac">Rímac</option>
+                                    <option value="San Bartolo">San Bartolo</option>
+                                    <option value="San Borja">San Borja</option>
+                                    <option value="San Isidro">San Isidro</option>
+                                    <option value="San Juan de Lurigancho">San Juan de Lurigancho</option>
+                                    <option value="San Juan de Miraflores">San Juan de Miraflores</option>
+                                    <option value="San Luis">San Luis</option>
+                                    <option value="San Martín de Porres">San Martín de Porres</option>
+                                    <option value="San Miguel">San Miguel</option>
+                                    <option value="Santa Anita">Santa Anita</option>
+                                    <option value="Santa María del Mar">Santa María del Mar</option>
+                                    <option value="Santa Rosa">Santa Rosa</option>
+                                    <option value="Santiago de Surco">Santiago de Surco</option>
+                                    <option value="Surquillo">Surquillo</option>
+                                    <option value="Villa El Salvador">Villa El Salvador</option>
+                                    <option value="Villa María del Triunfo">Villa María del Triunfo</option>
+                                </select>
+                        </div>
+                        <br>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="mdi-maps-satellite"></i></span>
+                            <input type="text" class="form-control floating-label" id="Pdireccion" placeholder="Direccion" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12 col-sm-4 col-md-6">
+                            <button type="button" class="btn btn-flat btn-danger btn-block">Cancelar</button>
+                        </div>
+                        <div class="col-xs-12 col-sm-4 col-md-6">
+                             <button type="submit" class="btn btn-flat btn-success btn-block" ng-click="actualizar()">Comprar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </center>
+    </div>
+</div>
+<hr>
+<div style="background: #2E2E2E; color: #FFFFFF;">
+<br>
+    <center>
+        <h4 class="serif">Sigenos...</h4>
+        <p class="serif">Aqui podras ver las ultimas noticias , en nuestras redes sociales...</p>
+    </center>
+    <center>
+        <a href="https://www.facebook.com/geekpet" target="_blank" class="btn btn-material-blue-700"><span class="fa fa-facebook"></span></a>
+        <a href="https://twitter.com/GeekPet" target="_blank" class="btn btn-info"><span class="fa fa-twitter"></span></a>
+        <a href="https://plus.google.com/102398192868254072429" target="_blank" class="btn btn-danger"><span class="fa fa-google"></span></a>
+        <a href="https://es.pinterest.com/geekpet/" target="_blank" class="btn btn-material-brown"><span class="fa fa-pinterest"></span></a>
+    </center>
+    <br>
+    <p align="center" class="serif" style="background: #202020; color: #FFFFFF;">Copyright &copy; GeekPet 2015</p>
+</div>
+<script>
+		$(function() {
+			$.material.init();
+		});
+</script>
+</div>

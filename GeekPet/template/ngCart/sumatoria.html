@@ -1,0 +1,11 @@
+<a href="#/compras" class="btn btn-flat btn-info">
+	<i class="mdi-action-shopping-cart"></i>
+	{{ ngCart.getTotalItems() }}
+    <ng-pluralize count="ngCart.getTotalItems()" when="{1: 'item', 'other':'items'}"></ng-pluralize>
+    <br />{{ ngCart.totalCost() | currency }}
+</a>
+<script>
+$(function() {
+	$.material.init();
+});
+</script>

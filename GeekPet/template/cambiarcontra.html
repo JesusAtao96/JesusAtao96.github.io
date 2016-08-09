@@ -1,0 +1,152 @@
+<link href='https://fonts.googleapis.com/css?family=Allan:700|PT+Serif:700italic' rel='stylesheet' type='text/css'>
+<div class="navbar navbar-info" style="background: #33B5E5;">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+    </div>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="#/" class="serifbar">
+                    <center><i class="material-icons hidden-xs">home</i>
+                        <br class="hidden-xs"><span>Inicio</span></center>
+                </a>
+            </li>
+            <li>
+                <a href="#/productos" class="serifbar">
+                    <center><i class="material-icons hidden-xs">more</i>
+                        <br class="hidden-xs"><span>Productos</span></center>
+                </a>
+            </li>
+            <li ng-show="online">
+                <a href="#/crear" class="serifbar">
+                    <center><i class="material-icons hidden-xs">palette</i>
+                        <br class="hidden-xs"><span>Crear</span></center>
+                </a>
+            </li>
+            <li>
+                <a href="#/buscar" class="serifbar">
+                    <center><i class="material-icons hidden-xs">search</i>
+                        <br class="hidden-xs"><span>Buscar Usuario</span></center>
+                </a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li ng-show="online">
+                <a href="#/compras" class="serifbar">
+                    <center><i class="material-icons hidden-xs">shopping_cart</i>
+                        <br class="hidden-xs"><span>Comprar</span></center>
+                </a>
+            </li>
+            <li ng-hide="online">
+                <a href="#/login" class="serifbar">
+                    <center><i class="material-icons hidden-xs">input</i>
+                        <br class="hidden-xs"><span>Iniciar Sesión</span></center>
+                </a>
+            </li>
+            <li ng-hide="online">
+                <a href="#/registro" class="serifbar">
+                    <center><i class="material-icons hidden-xs">person_add</i>
+                        <br class="hidden-xs"><span>Registrarse</span></center>
+                </a>
+            </li>
+            <li class="dropdown" ng-show="online">
+                <a href="javascript:void(0)" data-target="#" class="dropdown-toggle serifbar" data-toggle="dropdown">
+                    <center><i class="material-icons hidden-xs">face</i>
+                        <br class="hidden-xs"><span>Mi Cuenta</span><b class="caret"></b></center>
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="divider"></li>
+                    <li>
+                        <center><img src="{{perfil.img}}" class="img-circle" style="width: 60px; height: 60px;" ng-show="online"></center>
+                    </li>
+                    <li>
+                        <a href="#/perfil" class="serifdd"><center>{{perfil.usuario}}</center></a>
+                    </li>
+                    <li>
+                        <a href="#/configuracion" ng-show="online" class="serifdd"><center>Configuración</center></a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="javascript:void(0)" ng-click="logout()" ng-show="online" class="serifdd"><center>Cerrar Sesión</center></a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<hr>
+<div class="container-fluid serif">
+	<div class="col-xs-12 col-sm-4 col-md-3">
+		<div class="btn-group-vertical btn-block">
+			<hr>
+			<center><img src="{{perfil.img}}" class="img-circle" style="width: 70px; height: 70px;" ng-show="online"></center>
+			<hr>
+		    <a href="#/configuracion" class="btn btn-flat btn-info"><i class="mdi-action-settings">|</i>Vista General</a>
+		    <a href="#/editarp" class="btn btn-flat btn-info"><i class="mdi-content-create">|</i>Editar Perfil</a>
+		    <a href="#/cambiarc" class="btn btn-flat btn-info" ng-show="espwd"><i class="mdi-communication-vpn-key">|</i>Cambiar Contraseña</a>
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-4 col-md-9">
+		<div class="row">
+			<h3 class="text-muted serif">Cambiar Contraseña</h3>
+		</div>
+		<hr>
+		<form class="form-horizontal">
+		<div class="form-group">
+		    <label class="control-label">Contraseña Actual</label>
+		    <div class="input-group">
+				<span class="input-group-addon"><i class="mdi-communication-vpn-key"></i></span>
+				<input type="password" class="form-control" ng-model="actualc" required>
+			</div>
+		    <br>
+		    <label class="control-label">Nueva Contraseña</label>
+		    <div class="input-group">
+				<span class="input-group-addon"><i class="mdi-communication-vpn-key"></i></span>
+				<input type="password" class="form-control" ng-model="nuevac" required>
+			</div>
+		    <br>
+		    <label class="control-label">Repetir Nueva Contraseña</label>
+		    <div class="input-group">
+				<span class="input-group-addon"><i class="mdi-communication-vpn-key"></i></span>
+				<input type="password" class="form-control" ng-model="repnuevac" required>
+			</div>
+		    <br>
+		    <div class="col-xs-12 col-sm-1 col-md-2">
+		    </div>
+		    <div class="col-xs-12 col-sm-5 col-md-4">
+		    <button ng-click="actualizarc()" class="btn btn-success btn-block" style="border-radius: 24px;">Cambiar Contraseña</button>
+		    </div>
+		    <div class="col-xs-12 col-sm-5 col-md-4">
+		    <a href="#/configuracion" class="btn btn-danger btn-block" style="border-radius: 24px;">Cancelar</a>
+		    </div>
+		    <div class="col-xs-12 col-sm-1 col-md-2">
+		    </div>
+		</div>
+		</form>
+	</div>
+</div>
+<hr>
+<div style="background: #2E2E2E; color: #FFFFFF;">
+<br>
+    <center>
+        <h4 class="serif">Sigenos...</h4>
+        <p class="serif">Aqui podras ver las ultimas noticias , en nuestras redes sociales...</p>
+    </center>
+    <center>
+        <a href="https://www.facebook.com/geekpet" target="_blank" class="btn btn-material-blue-700"><span class="fa fa-facebook"></span></a>
+        <a href="https://twitter.com/GeekPet" target="_blank" class="btn btn-info"><span class="fa fa-twitter"></span></a>
+        <a href="https://plus.google.com/102398192868254072429" target="_blank" class="btn btn-danger"><span class="fa fa-google"></span></a>
+        <a href="https://es.pinterest.com/geekpet/" target="_blank" class="btn btn-material-brown"><span class="fa fa-pinterest"></span></a>
+    </center>
+    <br>
+    <p align="center" class="serif" style="background: #202020; color: #FFFFFF;">Copyright &copy; GeekPet 2015</p>
+</div> 
+<script>
+		$(function() {
+			$.material.init();
+		});
+</script>

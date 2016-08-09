@@ -1,0 +1,130 @@
+<link href='https://fonts.googleapis.com/css?family=Allan:700|PT+Serif:700italic' rel='stylesheet' type='text/css'>
+<div class="navbar navbar-info" style="background: #33B5E5;">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+    </div>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="#/" style="font-size: 1.3em; font-family: 'PT Serif', serif">
+                    <center><i class="material-icons">home</i>
+                        <br><span>Inicio</span></center>
+                </a>
+            </li>
+            <li  ng-show="online">
+                <a href="#/crear" style="font-size: 1.3em; font-family: 'PT Serif', serif">
+                    <center><i class="material-icons">palette</i>
+                        <br><span>Crear</span></center>
+                </a>
+            </li>
+            <li>
+                <a href="#/productos" style="font-size: 1.3em; font-family: 'PT Serif', serif">
+                    <center><i class="material-icons">more</i>
+                        <br><span>Productos</span></center>
+                </a>
+            </li>
+            <li>
+                <a href="#/buscar" style="font-size: 1.3em; font-family: 'PT Serif', serif">
+                    <center><i class="material-icons">search</i>
+                        <br><span>Buscar Usuario</span></center>
+                </a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a href="#/compras" ng-show="online" style="font-size: 1.3em; font-family: 'PT Serif', serif">
+                    <center><i class="material-icons">shopping_cart</i>
+                        <br><span>Comprar</span></center>
+                </a>
+            </li>
+            <li ng-hide="online">
+                <a href="#/login" style="font-size: 1.3em; font-family: 'PT Serif', serif">
+                    <center><i class="material-icons">input</i>
+                        <br><span>Iniciar Sesión</span></center>
+                </a>
+            </li>
+            <li ng-hide="online">
+                <a href="#/registro" style="font-size: 1.3em; font-family: 'PT Serif', serif">
+                    <center><i class="material-icons">person_add</i>
+                        <br><span>Registrarse</span></center>
+                </a>
+            </li>
+            <li class="dropdown" ng-show="online">
+                <a href="javascript:void(0)" data-target="#" class="dropdown-toggle" data-toggle="dropdown" style="font-size: 1.3em; font-family: 'PT Serif', serif">
+                    <center><i class="material-icons">face</i>
+                        <br><span>Mi Cuenta</span><b class="caret"></b></center>
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="divider"></li>
+                    <li>
+                        <center><img src="{{perfil.img}}" class="img-circle" style="width: 60px; height: 60px;" ng-show="online"></center>
+                    </li>
+                    <li><a href="#/perfil" style="font-size: 1.3em; font-family: 'PT Serif', serif">{{perfil.usuario}}</a></li>
+                    <li><a href="#/configuracion" ng-show="online" style="font-size: 1.3em; font-family: 'PT Serif', serif">Configuración</a></li>
+                    <li class="divider"></li>
+                    <li><a href="javascript:void(0)" ng-click="logout()" ng-show="online" style="font-size: 1.3em; font-family: 'PT Serif', serif">Cerrar Sesión</a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="container-fluid">
+    	<div class="row" ng-repeat="users in usua | filter: { email: num }">
+	    	<figure class="snip1344"><img ng-src="{{users.img}}" alt="profile-sample6" class="background"/><img ng-src="{{users.img}}" alt="profile-sample6" class="profile"/>
+		  		<figcaption>
+		  			<br>
+		    		<h3 style="font-family: 'PT Serif', serif">{{users.usuario}} <br><span style="font-family: 'PT Serif', serif">Conectado: {{mensaje | date:'medium'}}</span></h3>
+		  		</figcaption>
+			</figure>
+    	</div>
+    </div>
+</div>
+
+<div>
+    <p class="divider">Ultimos Diseños</p><br><br>
+    <div class="container-fluid">
+        <div ng-repeat="users in usua | filter: { email: num }">
+            <div class="col-xs-12 col-sm-8 col-md-12">
+                <div ng-repeat="design in users.design | orderBy : '-creacion' | filterBy: ['observacion']: 'publica'" class="thumbnail container-fluid col-xs-12 col-sm-6 col-md-3">
+                    <img ng-src="{{design.captura}}" class="img-responsive img-thumbnail">
+                    <div class="caption">
+                        <h3 align="center" style="font-family: 'PT Serif', serif">{{design.nombre}}</h3>
+                        <p align="center" style="font-family: 'PT Serif', serif">{{design.precio | currency}}</p>
+                    </div>
+                    <div style="height: 100px;" ng-show="online">
+                        <center>
+                            <ngcart-addtocart id="{{design.captura}}" name="{{design.nombre}}" price="{{design.precio}}" quantity="1" quantity-max="5" ng-show="online" style="font-family: 'PT Serif', serif">Añadir</ngcart-addtocart>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>
+<br><br>
+<div style="background: #2E2E2E; color: #FFFFFF">
+<br>
+	<center>
+    	<h4 style="font-family: 'PT Serif', serif">Sigenos...</h4>
+   		<p style="font-family: 'PT Serif', serif">Aqui podras ver las ultimas noticias , en nuestras redes sociales...</p>
+	</center>
+	<center>
+		<a href="https://www.facebook.com/geekpet" target="_blank" class="btn btn-material-blue-700"><span class="fa fa-facebook"></span></a>
+		<a href="https://twitter.com/GeekPet" target="_blank" class="btn btn-info"><span class="fa fa-twitter"></span></a>
+		<a href="https://plus.google.com/102398192868254072429" target="_blank" class="btn btn-danger"><span class="fa fa-google"></span></a>
+		<a href="https://es.pinterest.com/geekpet/" target="_blank" class="btn btn-material-brown"><span class="fa fa-pinterest"></span></a>
+	</center>
+	<br>
+    <p align="center" style="font-family: 'PT Serif', serif; background: #202020; color: #FFFFFF;">Copyright &copy; GeekPet 2015</p>
+</div>
+<script>
+$(function() {
+	$.material.init();
+});
+</script>

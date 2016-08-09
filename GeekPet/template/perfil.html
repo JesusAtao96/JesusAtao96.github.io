@@ -1,0 +1,131 @@
+<div class="navbar navbar-info" style="background: #33B5E5;">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="#/" class="serifbar">
+                    <center><i class="material-icons hidden-xs">home</i>
+                        <br class="hidden-xs"><span>Inicio</span></center>
+                </a>
+            </li>
+            <li>
+                <a href="#/productos" class="serifbar">
+                    <center><i class="material-icons hidden-xs">more</i>
+                        <br class="hidden-xs"><span>Productos</span></center>
+                </a>
+            </li>
+            <li ng-show="online">
+                <a href="#/crear" class="serifbar">
+                    <center><i class="material-icons hidden-xs">palette</i>
+                        <br class="hidden-xs"><span>Crear</span></center>
+                </a>
+            </li>
+            <li>
+                <a href="#/buscar" class="serifbar">
+                    <center><i class="material-icons hidden-xs">search</i>
+                        <br class="hidden-xs"><span>Buscar Usuario</span></center>
+                </a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li ng-show="online">
+                <a href="#/compras" class="serifbar">
+                    <center><i class="material-icons hidden-xs">shopping_cart</i>
+                        <br class="hidden-xs"><span>Comprar</span></center>
+                </a>
+            </li>
+            <li ng-hide="online">
+                <a href="#/login" class="serifbar">
+                    <center><i class="material-icons hidden-xs">input</i>
+                        <br class="hidden-xs"><span>Iniciar Sesión</span></center>
+                </a>
+            </li>
+            <li ng-hide="online">
+                <a href="#/registro" class="serifbar">
+                    <center><i class="material-icons hidden-xs">person_add</i>
+                        <br class="hidden-xs"><span>Registrarse</span></center>
+                </a>
+            </li>
+            <li class="dropdown" ng-show="online">
+                <a href="javascript:void(0)" data-target="#" class="dropdown-toggle serifbar" data-toggle="dropdown">
+                    <center><i class="material-icons hidden-xs">face</i>
+                        <br class="hidden-xs"><span>Mi Cuenta</span><b class="caret"></b></center>
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="divider"></li>
+                    <li>
+                        <center><img src="{{perfil.img}}" class="img-circle" style="width: 60px; height: 60px;" ng-show="online"></center>
+                    </li>
+                    <li>
+                        <a href="#/perfil" class="serifdd"><center>{{perfil.usuario}}</center></a>
+                    </li>
+                    <li>
+                        <a href="#/configuracion" ng-show="online" class="serifdd"><center>Configuración</center></a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="javascript:void(0)" ng-click="logout()" ng-show="online" class="serifdd"><center>Cerrar Sesión</center></a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <figure class="snip1344"><img ng-src="{{perfil.img}}" alt="profile-sample6" class="background"/><img ng-src="{{perfil.img}}" alt="profile-sample6" class="profile"/>
+                <figcaption>
+                    <br>
+                    <h3 class="serif">{{perfil.usuario}} <br><span class="serif">Total de diseños: {{totaldis}}</span></h3>
+                    <br>
+                    <center><a href="#/administrar" class="btn btn-flat btn-info serif">Administrar diseños y pedidos</a></center>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+</div>
+
+<div>
+    <p class="divider">Ultimos Diseños</p><br><br>
+    <div class="container-fluid serif">
+        <div ng-repeat="design in dis | orderBy : '-creacion'" class="thumbnail container-fluid col-xs-12 col-sm-6 col-md-3">
+            <img ng-src="{{design.captura}}" class="img-responsive img-thumbnail">
+            <div class="caption">
+                <h3 align="center" class="serif">{{design.nombre}}</h3>
+                <p align="center">{{design.precio | currency}}</p>
+            </div>
+            <div style="height: 100px;" ng-show="online">
+                <center>
+                    <ngcart-addtocart id="{{design.captura}}" name="{{design.nombre}}" price="{{design.precio}}" quantity="1" quantity-max="5" ng-show="online">Añadir</ngcart-addtocart>
+                </center>
+            </div>
+        </div>
+    </div>
+</div>
+<br><hr>
+<div style="background: #2E2E2E; color: #FFFFFF;">
+    <br>
+    <center>
+        <h4 class="serif">Sigenos...</h4>
+        <p class="serif">Aqui podras ver las ultimas noticias , en nuestras redes sociales...</p>
+    </center>
+    <center>
+        <a href="https://www.facebook.com/geekpet" target="_blank" class="btn btn-material-blue-700"><span class="fa fa-facebook"></span></a>
+        <a href="https://twitter.com/GeekPet" target="_blank" class="btn btn-info"><span class="fa fa-twitter"></span></a>
+        <a href="https://plus.google.com/102398192868254072429" target="_blank" class="btn btn-danger"><span class="fa fa-google"></span></a>
+        <a href="https://es.pinterest.com/geekpet/" target="_blank" class="btn btn-material-brown"><span class="fa fa-pinterest"></span></a>
+    </center>
+    <br>
+    <p align="center" class="serif" style="background: #202020; color: #FFFFFF;">Copyright &copy; GeekPet 2015</p>
+</div>
+<script>
+$(function() {
+    $.material.init();
+});
+</script>

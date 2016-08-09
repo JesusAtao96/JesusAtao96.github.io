@@ -1,0 +1,281 @@
+<link href='https://fonts.googleapis.com/css?family=Allan:700|PT+Serif:700italic' rel='stylesheet' type='text/css'>
+<div class="navbar navbar-info" style="background: #33B5E5;">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="#/" class="serifbar">
+                    <center><i class="material-icons hidden-xs">home</i>
+                        <br class="hidden-xs"><span>Inicio</span></center>
+                </a>
+            </li>
+            <li>
+                <a href="#/productos" class="serifbar">
+                    <center><i class="material-icons hidden-xs">more</i>
+                        <br class="hidden-xs"><span>Productos</span></center>
+                </a>
+            </li>
+            <li ng-show="online">
+                <a href="#/crear" class="serifbar">
+                    <center><i class="material-icons hidden-xs">palette</i>
+                        <br class="hidden-xs"><span>Crear</span></center>
+                </a>
+            </li>
+            <li>
+                <a href="#/buscar" class="serifbar">
+                    <center><i class="material-icons hidden-xs">search</i>
+                        <br class="hidden-xs"><span>Buscar Usuario</span></center>
+                </a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li ng-show="online">
+                <a href="#/compras" class="serifbar">
+                    <center><i class="material-icons hidden-xs">shopping_cart</i>
+                        <br class="hidden-xs"><span>Comprar</span></center>
+                </a>
+            </li>
+            <li ng-hide="online">
+                <a href="#/login" class="serifbar">
+                    <center><i class="material-icons hidden-xs">input</i>
+                        <br class="hidden-xs"><span>Iniciar Sesión</span></center>
+                </a>
+            </li>
+            <li ng-hide="online">
+                <a href="#/registro" class="serifbar">
+                    <center><i class="material-icons hidden-xs">person_add</i>
+                        <br class="hidden-xs"><span>Registrarse</span></center>
+                </a>
+            </li>
+            <li class="dropdown" ng-show="online">
+                <a href="javascript:void(0)" data-target="#" class="dropdown-toggle serifbar" data-toggle="dropdown">
+                    <center><i class="material-icons hidden-xs">face</i>
+                        <br class="hidden-xs"><span>Mi Cuenta</span><b class="caret"></b></center>
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="divider"></li>
+                    <li>
+                        <center><img src="{{perfil.img}}" class="img-circle" style="width: 60px; height: 60px;" ng-show="online"></center>
+                    </li>
+                    <li>
+                        <a href="#/perfil" class="serifdd"><center>{{perfil.usuario}}</center></a>
+                    </li>
+                    <li>
+                        <a href="#/configuracion" ng-show="online" class="serifdd"><center>Configuración</center></a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="javascript:void(0)" ng-click="logout()" ng-show="online" class="serifdd"><center>Cerrar Sesión</center></a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="container-fluid serif">
+    <div class="col-xs-12 col-sm-4 col-md-3">
+        <ul class="nav nav-pills nav-stacked">
+            <li class="active"><a href="#design" data-toggle="tab">Mis Diseños  <span class="badge">{{totaldis}}</span></a></li>
+            <li><a href="#pedidos" data-toggle="tab">Mis Pedidos  <span class="badge">{{totalped}}</span></a></li>
+        </ul>
+    </div>
+    <div class="col-xs-12 col-sm-8 col-md-9">
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade active in table-responsive" id="design">
+                <table class="table table-striped table-hover" style="height: 400px;">
+                    <thead>
+                        <tr>
+                            <th>Captura</th>
+                            <th>Nombre</th>
+                            <th>Creacion</th>
+                            <th>Precio S/.</th>
+                            <th>Observacion</th>
+                            <th>Accion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="info" ng-repeat="disen in dis">
+                            <td><img ng-src="{{disen.captura}}" class="img-responsive img-thumbnail" style="width: 50px; height: 50px;"></td>
+                            <td>
+                                <input type="text" class="form-control" value="{{disen.nombre}}" id="disnom{{disen.$id}}" required>
+                            </td>
+                            <td>{{disen.creacion | date:'dd'}}/{{disen.creacion | date:'MMM'}}/{{disen.creacion | date:'yyyy'}}</td>
+                            <td>
+                                <input type="text" class="form-control" value="{{disen.precio}}" id="disprecio{{disen.$id}}" required>
+                            </td>
+                            <td>
+                                <select id="estado{{disen.$id}}" ng-model="disen.observacion" class="form-control">
+                                    <option value="privada">Privada</option>
+                                    <option value="publica">Publica</option>
+                                </select>
+                            </td>
+                            <td>
+                                <a href="javascript:void(0)" class="btn btn-raised btn-primary"  data-toggle="modal" data-target="#a{{disen.$id}}">Actualizar</a>
+
+                                <div id="a{{disen.$id}}" class="modal fade" tabindex="-1" style="display: none;">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                        <h4 class="modal-title">Alerta</h4>
+                                      </div>
+                                      <div class="modal-body">
+                                        <p>¿Deseas Actualizar este diseño?</p>
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-success" data-dismiss="modal" ng-click="actualizar(disen.$id)">Aceptar</button>
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+
+                                <a href="javascript:void(0)" class="btn btn-raised btn-danger" style="font-weight: bold;" data-toggle="modal" data-target="#e{{disen.$id}}">Eliminar</a>
+                                
+
+                                <div id="e{{disen.$id}}" class="modal fade" tabindex="-1" style="display: none;">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                        <h4 class="modal-title">Alerta</h4>
+                                      </div>
+                                      <div class="modal-body">
+                                        <p>¿Deseas eliminar este diseño?</p>
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-success" data-dismiss="modal" ng-click="eliminar(disen.$id)">Aceptar</button>
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade table-responsive" id="pedidos">
+                <ul class="breadcrumb" style="margin-bottom: 15px;">
+                    <li class="active"><a href="#pendientes" data-toggle="tab">Pendientes</a></li>
+                    <li><a href="#listos" data-toggle="tab">Listos</a></li>
+                    <li><a href="#recibido" data-toggle="tab">Recibido</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade active in" id="pendientes">
+                        <table class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Diseño</th>
+                                    <th>Nombre</th>
+                                    <th>Talla</th>
+                                    <th>Precio</th>
+                                    <th>Cantidad</th>
+                                    <th>Subtotal</th>
+                                    <th>Fecha de Pedido</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="warning" ng-repeat="pedidos in pedid | filterBy: ['estado']: 'Pendiente'">
+                                    <td><img ng-src="{{pedidos.producto.foto_producto}}" class="img-responsive img-thumbnail" style="width: 50px; height: 50px;"></td>
+                                    <td>{{pedidos.producto.nombre_producto}}</td>
+                                    <td>{{pedidos.producto.precio_producto | currency}}</td>
+                                    <td>{{pedidos.producto.talla}}</td>
+                                    <td>{{pedidos.producto.cantidad_producto}}</td>
+                                    <td>{{pedidos.producto.subtotal | currency}}</td>
+                                    <td>{{pedidos.fecha_pedido | date:'dd'}}/{{pedidos.fecha_pedido | date:'MMM'}}/{{pedidos.fecha_pedido | date:'yyyy'}}</td>
+                                    <td>{{pedidos.estado}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane fade" id="listos">
+                        <table class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Diseño</th>
+                                    <th>Nombre</th>
+                                    <th>Talla</th>
+                                    <th>Precio</th>
+                                    <th>Cantidad</th>
+                                    <th>Subtotal</th>
+                                    <th>Fecha Listo</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="info" ng-repeat="pedidos in pedid | filterBy: ['estado']: 'Listo'">
+                                    <td><img ng-src="{{pedidos.producto.foto_producto}}" class="img-responsive img-thumbnail" style="width: 50px; height: 50px;"></td>
+                                    <td>{{pedidos.producto.nombre_producto}}</td>
+                                    <td>{{pedidos.producto.precio_producto | currency}}</td>
+                                    <td>{{pedidos.producto.talla}}</td>
+                                    <td>{{pedidos.producto.cantidad_producto}}</td>
+                                    <td>{{pedidos.producto.subtotal | currency}}</td>
+                                    <td>{{pedidos.fecha_listo | date:'dd'}}/{{pedidos.fecha_listo | date:'MMM'}}/{{pedidos.fecha_listo | date:'yyyy'}}</td>
+                                    <td>{{pedidos.estado}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane fade" id="recibido">
+                        <table class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Diseño</th>
+                                    <th>Nombre</th>
+                                    <th>Talla</th>
+                                    <th>Precio</th>
+                                    <th>Cantidad</th>
+                                    <th>Subtotal</th>
+                                    <th>Fecha Recibido</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="success" ng-repeat="pedidos in pedid | filterBy: ['estado']: 'Recibido'">
+                                    <td><img ng-src="{{pedidos.producto.foto_producto}}" class="img-responsive img-thumbnail" style="width: 50px; height: 50px;"></td>
+                                    <td>{{pedidos.producto.nombre_producto}}</td>
+                                    <td>{{pedidos.producto.precio_producto | currency}}</td>
+                                    <td>{{pedidos.producto.talla}}</td>
+                                    <td>{{pedidos.producto.cantidad_producto}}</td>
+                                    <td>{{pedidos.producto.subtotal | currency}}</td>
+                                    <td>{{pedidos.fecha_recibido | date:'dd'}}/{{pedidos.fecha_recibido | date:'MMM'}}/{{pedidos.fecha_recibido | date:'yyyy'}}</td>
+                                    <td>{{pedidos.estado}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="background: #2E2E2E; color: #FFFFFF; margin-top: 28%;">
+    <br>
+    <center>
+        <h4 class="serif">Sigenos...</h4>
+        <p class="serif">Aqui podras ver las ultimas noticias , en nuestras redes sociales...</p>
+    </center>
+    <center>
+        <a href="https://www.facebook.com/geekpet" target="_blank" class="btn btn-material-blue-700"><span class="fa fa-facebook"></span></a>
+        <a href="https://twitter.com/GeekPet" target="_blank" class="btn btn-info"><span class="fa fa-twitter"></span></a>
+        <a href="https://plus.google.com/102398192868254072429" target="_blank" class="btn btn-danger"><span class="fa fa-google"></span></a>
+        <a href="https://es.pinterest.com/geekpet/" target="_blank" class="btn btn-material-brown"><span class="fa fa-pinterest"></span></a>
+    </center>
+    <br>
+    <p align="center" class="serif" style="background: #202020; color: #FFFFFF;">Copyright &copy; GeekPet 2015</p>
+</div>
+<script>
+$(function() {
+    $.material.init();
+});
+</script>

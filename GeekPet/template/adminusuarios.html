@@ -1,0 +1,139 @@
+<div class="navbar navbar-info" style="background: #33B5E5;">
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand serifbar" href="#/panadmin">
+			<center>
+				<i class="material-icons">pets</i><br>GeekPet
+			</center>
+		</a>
+	</div>
+	<div class="navbar-collapse collapse navbar-responsive-collapse">
+		<ul class="nav navbar-nav">
+			<li>
+				<a href="#/adpedidos" class="serifbar">
+					<center>
+						<i class="material-icons">store</i><br>Pedidos
+					</center>
+				</a>
+			</li>
+			<li>
+				<a href="#/adestadisticas" class="serifbar">
+					<center>
+						<i class="material-icons">show_chart</i><br>Estadisticas
+					</center>
+				</a>
+			</li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li>
+				<a href="javascript:void(0)" ng-click="logout()" class="serifbar">
+					<center>
+						<i class="material-icons">label_outline</i><br>Cerrar Sesión
+					</center>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="container-fluid">
+	<div class="col-xs-12 col-sm-4 col-md-4">
+		
+	</div>
+	<div class="col-xs-12 col-sm-4 col-md-4">
+		<center>
+			<div ng-repeat="users in usua | filter: { email: num }">
+				<div class="list-group">
+					<div class="list-group-item">
+					    <div class="row-picture">
+					    	<img class="circle" ng-src="{{users.img}}" alt="icon" align="right">
+					    </div>
+					    <div class="row-content">
+					    	<h4 class="list-group-item-heading serif">{{users.usuario}} </h4>
+
+					    	<p class="list-group-item-text serif">Conectado: {{mensaje | date:'medium'}}</p>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</center>
+	</div>
+	<div class="col-xs-12 col-sm-4 col-md-4">
+		
+	</div>
+</div>
+<br>
+<div class="container-fluid serif">
+	<div class="table-responsive">
+		<table class="table table-striped table-hover ">
+		    <thead>
+		        <tr>
+	            	<th>
+	            		<center>Producto</center>
+	            	</th>
+		            <th>
+		            	<center>Talla</center>
+		            </th>
+		            <th>
+		            	<center>Cantidad</center>
+		            </th>
+		            <th>
+		            	<center>S/. Total</center>
+		            </th>
+		            <th>
+		            	<center>Dirección</center>
+		            </th>
+		            <th>
+		            	<center>Estado</center>
+		            </th>
+		            <th>
+		            	<center>Accion</center>
+		            </th>
+		        </tr>
+		    </thead>
+		    <tbody>
+				<tr ng-repeat="pedido in pedidos" class="warning">
+		            <td>
+		            	<center>
+			            	<img ng-src="{{pedido.producto.foto_producto}}" class="img-circle" style="width: 90px; height: 90px;">
+			            	<br>
+			            	Nombre: {{pedido.producto.nombre_producto}}
+			            	<br>
+			            	Precio: {{pedido.producto.precio_producto | currency}}
+			            </center>
+		            </td>
+		            <td>
+		            	<center>{{pedido.producto.talla}}</center>
+		            </td>
+		            <td>
+		            	<center>{{pedido.producto.cantidad_producto}}</center>
+		            </td>
+		            <td>
+		            	<center>{{pedido.producto.subtotal}}</center>
+		            </td>
+		            <td>
+		            	<center>{{pedido.direccion}}</center>
+		            </td>
+		            <td>
+		            	<center>{{pedido.estado}}</center>
+		            </td>
+		            <td>
+		            	<center>
+		            		<button class="btn btn-flat btn-warning" ng-click="pendiente(pedido.$id)">Pendiente</button>
+			            	<button class="btn btn-flat btn-info" ng-click="listo(pedido.$id)">Listo</button>
+			            	<button class="btn btn-flat btn-success" ng-click="recibido(pedido.$id)">Recibido</button>
+		            	</center>
+		            </td>
+		        </tr>
+		    </tbody>
+		</table>
+	</div>
+</div>
+<script>
+		$(function() {
+			$.material.init();
+		});
+</script>

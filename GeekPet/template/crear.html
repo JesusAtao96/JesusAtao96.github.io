@@ -1,0 +1,274 @@
+
+
+<link rel="stylesheet" type="text/css" href="css/jquery.miniColors.css" />
+<div class="navbar navbar-info" style="background: #33B5E5;">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+    </div>
+   <div class="navbar-collapse collapse navbar-responsive-collapse">
+	   <ul class="nav navbar-nav">
+            <li>
+                <a href="#/" class="serifbar">
+                    <center><i class="material-icons hidden-xs">home</i>
+                        <br class="hidden-xs"><span>Inicio</span></center>
+                </a>
+            </li>
+            <li>
+                <a href="#/productos" class="serifbar">
+                    <center><i class="material-icons hidden-xs">more</i>
+                        <br class="hidden-xs"><span>Productos</span></center>
+                </a>
+            </li>
+            <li class="active" ng-show="online">
+                <a href="#/crear" class="serifbar">
+                    <center><i class="material-icons hidden-xs">palette</i>
+                        <br class="hidden-xs"><span>Crear</span></center>
+                </a>
+            </li>
+            <li>
+                <a href="#/buscar" class="serifbar">
+                    <center><i class="material-icons hidden-xs">search</i>
+                        <br class="hidden-xs"><span>Buscar Usuario</span></center>
+                </a>
+            </li>
+        </ul>
+	    <ul class="nav navbar-nav navbar-right">
+            <li ng-show="online">
+                <a href="#/compras" class="serifbar">
+                    <center><i class="material-icons hidden-xs">shopping_cart</i>
+                        <br class="hidden-xs"><span>Comprar</span></center>
+                </a>
+            </li>
+            <li ng-hide="online">
+                <a href="#/login" class="serifbar">
+                    <center><i class="material-icons hidden-xs">input</i>
+                        <br class="hidden-xs"><span>Iniciar Sesión</span></center>
+                </a>
+            </li>
+            <li ng-hide="online">
+                <a href="#/registro" class="serifbar">
+                    <center><i class="material-icons hidden-xs">person_add</i>
+                        <br class="hidden-xs"><span>Registrarse</span></center>
+                </a>
+            </li>
+            <li class="dropdown" ng-show="online">
+                <a href="javascript:void(0)" data-target="#" class="dropdown-toggle serifbar" data-toggle="dropdown">
+                    <center><i class="material-icons hidden-xs">face</i>
+                        <br class="hidden-xs"><span>Mi Cuenta</span><b class="caret"></b></center>
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="divider"></li>
+                    <li>
+                        <center><img src="{{perfil.img}}" class="img-circle" style="width: 60px; height: 60px;" ng-show="online"></center>
+                    </li>
+                    <li>
+                        <a href="#/perfil" class="serifdd"><center>{{perfil.usuario}}</center></a>
+                    </li>
+                    <li>
+                        <a href="#/configuracion" ng-show="online" class="serifdd"><center>Configuración</center></a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="javascript:void(0)" ng-click="logout()" ng-show="online" class="serifdd"><center>Cerrar Sesión</center></a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+	</div>
+
+</div>
+<!-- Stack the columns on mobile by making one full-width and the other half-width -->
+<div class="container-fluid serif">
+	<div class="row">
+		<div class="col-xs-12 col-sm-4 col-md-4">
+			<div class="jumbotron">
+				<div class="box">
+					<p>Diseña tu prenda</p>
+				</div>
+				<hr>
+				<ul class="breadcrumb" style="margin-bottom: 15px;">
+					<li class="active"><a href="#texto" data-toggle="tab" class="text-info">Texto</a></li>
+					<li><a href="#imagen" data-toggle="tab" class="text-info">Imagen</a></li>
+					<li><a href="#color" data-toggle="tab" class="text-info">Color</a></li>
+				</ul>
+				<div id="myTabContent" class="tab-content">
+					<div class="tab-pane fade active in" id="texto">
+						<div class="box">
+							<p class="text-muted">Texto</p>
+						</div>
+						<div class="form-group has-success">
+							<div class="input-group">
+								<div class="col-xs-12 col-sm-12 col-md-9">
+									<input class="form-control floating-label" id="text-string" type="text" placeholder="Ingrese el texto" ng-model="textito">
+								</div>
+								<div class="col-xs-12 col-sm-12 col-md-3">
+									<span class="input-group-btn">
+										<button class="btn btn-flat btn-default mdi-content-send btn-block" type="button" id="add-text" title="Enviar a la prenda"></button>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="clearfix">
+							<div class="btn-group inline pull-left" id="texteditor" style="">
+								<button id="font-family" class="btn btn-flat btn-default dropdown-toggle mdi-editor-mode-edit" data-toggle="dropdown" title="Tipo de Letra"></button>
+								<ul class="dropdown-menu" role="menu" aria-labelledby="font-family-X">
+									<li><a tabindex="-1" href="javascript:void(0)" onclick="setFont('Delicious');" class="Delicious">Delicious</a></li>
+									<li><a tabindex="-1" href="javascript:void(0)" onclick="setFont('Courier');" class="Courier">Courier</a></li>
+									<li><a tabindex="-1" href="javascript:void(0)" onclick="setFont('Comic Sans MS');" class="ComicSansMS">Comic Sans MS</a></li>
+									<li><a tabindex="-1" href="javascript:void(0)" onclick="setFont('Impact');" class="Impact">Impact</a></li>
+									<li><a tabindex="-1" href="javascript:void(0)" onclick="setFont('Montserrat');" class="Montserrat">Montserrat</a></li>
+									<li><a tabindex="-1" href="javascript:void(0)" onclick="setFont('Allan');" class="Allan">Allan</a></li>
+									<li><a tabindex="-1" href="javascript:void(0)" onclick="setFont('Anton');" class="Anton">Anton</a></li>
+									<li><a tabindex="-1" href="javascript:void(0)" onclick="setFont('Pacifico');" class="Pacifico">Pacifico</a></li>
+									<li><a tabindex="-1" href="javascript:void(0)" onclick="setFont('Audiowide');" class="Audiowide">Audio wide</a></li>
+									<li><a tabindex="-1" href="javascript:void(0)" onclick="setFont('Calligraffitti');" class="Calligraffitti">Calligraffitti</a></li>
+									<li><a tabindex="-1" href="javascript:void(0)" onclick="setFont('Allura');" class="Allura">Allura</a></li>
+								</ul>
+								<button id="text-bold" class="btn btn-flat btn-default mdi-editor-format-bold" data-original-title="Negrita"></button>
+								<button id="text-italic" class="btn btn-flat btn-default mdi-editor-format-italic" data-original-title="Cursiva"></button>
+								<button id="text-strike" class="btn btn-flat btn-default mdi-editor-format-strikethrough" title="Strike"></button>
+								<button id="text-underline" class="btn btn-flat btn-default mdi-editor-format-underline" title="Subrayado"></button>
+								<button class="btn btn-flat btn-default" href="#" rel="tooltip" data-placement="top" data-original-title="Color de Letra"><input type="hidden" id="text-fontcolor" class="color-picker" size="7" value="#000000"></button>
+								<button id="remove-selected" class="btn btn-flat btn-default mdi-action-delete" title="Eliminar Seleccionado"></button>
+								<button class="btn btn-flat btn-default" id="send-to-back" title="Send to Back" style="display: none;" hidden="hidden"></button>
+								<button class="btn btn-flat btn-default" id="bring-to-front" title="Bring to Front" style="display: none;" hidden="hidden"></button>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane fade" id="imagen">
+						<div class="form-group">
+							<form ng-submit="uploadFile()">
+								<div class="form-group">
+									<label class="control-label" for="addon1">Suba su foto</label>
+									<div class="input-group">
+										<span class="input-group-addon"><i class="mdi-image-collections"></i></span>
+										<input type="text" class="form-control floating-label" placeholder="Click Para Buscar Imagen...">
+										<input type="file" name="file" id="nombreControl" accept="image/*">
+										<span class="input-group-btn">
+											<button class="btn btn-flat btn-default mdi-file-file-upload btn-block" type="submit"></button>
+										</span>
+									</div>
+								</div>
+							</form>
+						</div>
+						<br>
+						<center>
+						<div style="height:300px; overflow-y: auto;">
+							<div ng-repeat="fotitos in misfotos" style="width: 102px;" class="col-xs-12 col-sm-12 col-md-3">
+								<img style="cursor:pointer; width: 100px; height: 100px; border-style: solid; border-color: #000000 #000000; border-width: medium;" ng-src="{{fotitos.fotos}}" my-cool-directive data-dismiss="modal">
+								<a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#{{fotitos.$id}}" ng-click="eliminardis(fotitos.$id)">Eliminar</a>
+							</div>
+						</div>
+						</center>
+					</div>
+					<div class="tab-pane fade" id="color">
+						<div class="box">
+							<p class="text-muted">Seleccione Color</p>
+						</div>
+						<div class="clearfix">
+							<a class="btn btn-default btn-fab btn-raised color-preview" title="White" style="background-color:#ffffff;"></a>
+							<a class="btn btn-primary btn-fab btn-raised color-preview" title="Charcoal" style="background-color:#5b5b5b;"></a>
+							<a class="btn btn-primary btn-fab btn-raised color-preview" title="Black" style="background-color:#222222;"></a>
+							<a class="btn btn-primary btn-fab btn-raised color-preview" title="Heather Orange" style="background-color:#fc8d74;"></a>
+							<a class="btn btn-primary btn-fab btn-raised color-preview" title="Chesnut" style="background-color:#806355;"></a>
+							<a class="btn btn-default btn-fab btn-raised color-preview" title="Citrus Yellow" style="background-color:#faef93;"></a>
+							<a class="btn btn-primary btn-fab btn-raised color-preview" title="Kiwi" style="background-color:#8aa140;"></a>
+							<a class="btn btn-primary btn-fab btn-raised color-preview" title="Irish Green" style="background-color:#1f6522;"></a>
+							<a class="btn btn-primary btn-fab btn-raised color-preview" title="Scrub Green" style="background-color:#13afa2;"></a>
+							<a class="btn btn-primary btn-fab btn-raised color-preview" title="Heather Sapphire" style="background-color:#15aeda;"></a>
+							<a class="btn btn-default btn-fab btn-raised color-preview" title="Sky" style="background-color:#a5def8;"></a>
+							<a class="btn btn-primary btn-fab btn-raised color-preview" title="Antique Sapphire" style="background-color:#0f77c0;"></a>
+							<a class="btn btn-primary btn-fab btn-raised color-preview" title="Heather Navy" style="background-color:#3469b7;"></a>
+							<a class="btn btn-primary btn-fab btn-raised color-preview" title="Cherry Red" style="background-color:#c50404;"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-8 col-md-8">
+			<div class="panel panel-info">
+				<div class="panel-heading" style="background: #33B5E5;">
+					<h3 class="panel-title serif">Zona de diseño</h3>
+				</div>
+				<div class="panel-body">
+					<center>
+					<div>
+						<div id="shirtDiv" class="page" style="width: 530px; height: 600px; position: relative; background-color: rgb(255, 255, 255);">
+							<img id="tshirtFacing" src="img/front.png"></img>
+							<div id="drawingArea" style="position: absolute;top: 120px;left: 189px;z-index: 10;width: 200px;height: 410px;">
+								<canvas id="tcanvas" width="200" height="400" class="hover" style="-webkit-user-select: none;"></canvas>
+							</div>
+						</div>
+					</div>
+					</center>
+					<br><hr>
+					<div class="form-group">
+						<div class="form-group">
+							<label class="col-xs-12 col-sm-2 col-md-2 control-label">Precio:</label>
+					      	<div class="col-xs-12 col-sm-4 col-md-4">
+					        	<input type="text" class="form-control floating-label" ng-model="disprecio" placeholder="Coloqué Precio (S/.)" required>
+					      	</div>
+					      	<label class="col-xs-12 col-sm-2 col-md-2 control-label">Observación:</label>
+					      	<div class="col-xs-12 col-sm-4 col-md-4">
+					        	<select class="form-control" ng-model="obs">
+				          			<option data-toggle="tooltip" title="El Diseño sera observado solo por ti" name="Privada" id="oPrivado" class="observado" value="privada">Privada</option>
+				          			<option data-toggle="tooltip" title="El Diseño sera observado solo por todos" name="Publica" id="oPublico" class="observado" value="publica">Publica</option>
+				        		</select>
+					      	</div>
+					    </div>
+				        <br><br><br>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="mdi-image-color-lens"></i></span>
+							<input class="form-control floating-label" id="focusedInput" type="text" placeholder="Nombre del Diseño" ng-model="nombred" required>
+						</div>
+						<center><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#complete-dialog" style="color: #FFFFFF; font-weight: bold;">Guardar Diseño</button></center>
+						<div id="complete-dialog" class="modal fade" tabindex="-1">
+						  <div class="modal-dialog">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						        <h4 class="modal-title">¿Desea guardar este diseño?</h4>
+						      </div>
+						      <div class="modal-body"></div>
+						      <div class="modal-footer">
+						      	<input type="submit" class="btn btn-success btn-flat" value="Aceptar" ng-click="enviardis()" data-dismiss="modal"/>
+						        <button type="button" class="btn btn-danger btn-flat" data-dismiss="modal">Cancelar</button>
+						      </div>
+						    </div>
+						  </div>
+						</div>
+						<form method="POST" enctype="multipart/form-data" id="myForm">
+							<input type="hidden" name="img_val" id="img_val" value="" />
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<hr>
+<div style="background: #2E2E2E; color: #FFFFFF;">
+<br>
+	<center>
+    	<h4 class="serif">Sigenos...</h4>
+   		<p class="serif">Aqui podras ver las ultimas noticias , en nuestras redes sociales...</p>
+	</center>
+	<center>
+		<a href="https://www.facebook.com/geekpet" target="_blank" class="btn btn-material-blue-700"><span class="fa fa-facebook"></span></a>
+		<a href="https://twitter.com/GeekPet" target="_blank" class="btn btn-info"><span class="fa fa-twitter"></span></a>
+		<a href="https://plus.google.com/102398192868254072429" target="_blank" class="btn btn-danger"><span class="fa fa-google"></span></a>
+		<a href="https://es.pinterest.com/geekpet/" target="_blank" class="btn btn-material-brown"><span class="fa fa-pinterest"></span></a>
+	</center>
+	<br>
+    <p align="center" class="serif" style="background: #202020; color: #FFFFFF;">Copyright &copy; GeekPet 2015</p>
+</div>
+<script type="text/javascript" src="js/tshirtEditor.js"></script>
+<script>
+$(function() {
+	$.material.init();
+});
+</script>
