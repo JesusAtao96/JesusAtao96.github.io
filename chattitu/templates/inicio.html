@@ -1,0 +1,66 @@
+<div class="container-fluid">
+    <h1 class="h1-responsive" id="titulo">Chattitu</h1>
+    <h3 class="h3-responsive" id="subtitulo">Chat en tiempo real</h3>
+    <div class="col-xs-12 col-sm-6 col-md-6">
+        <form class="textw">
+            <h4 class="text-center"><i class="fa fa-user"></i> Iniciar Sesión:</h4>
+            <div class="row">
+                <div class="input-field">
+                    <i class="material-icons prefix">email</i>
+                    <input id="icon_email" type="tel" class="validate" ng-model="lemail">
+                    <label for="icon_email">Tu Correo</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">lock</i>
+                    <input id="password" type="password" class="validate" ng-model="lpassword">
+                    <label for="password">Contraseña</label>
+                </div>
+                <div class="text-center">
+                    <button type="button" class="btn btn-primary waves-effect waves-light" ng-click="login()">Ingresar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-6">
+        <div class="textw">
+            <!--Form-->
+            <form>
+                <h4 class="text-center"><i class="fa fa-user"></i> Registrar:</h4>
+                <div class="input-field">
+                    <i class="material-icons prefix">person</i>
+                    <input id="icon_user" type="text" class="validate" ng-model="rusuario">
+                    <label for="icon_user">Nombre</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">email</i>
+                    <input id="icon_email" type="email" class="validate" ng-model="remail">
+                    <label for="icon_email">Correo</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">lock</i>
+                    <input id="password" type="password" class="validate" ng-model="rpassword">
+                    <label for="password">Contraseña</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">lock</i>
+                    <input id="password-rep" type="password" class="validate" ng-model="rrepassword">
+                    <label for="password-rep">Repita Contraseña</label>
+                </div>
+                <div class="text-center">
+                    <button type="button" class="btn btn-primary btn-lg waves-effect waves-light" ng-click="registrar()">Registrar</button>
+                </div>
+            </form>
+            <!--/.Form-->
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-4 col-md-4"></div>
+    <div class="col-xs-12 col-sm-4 col-md-4">
+        <h4 class="text-center textw"><i class="fa fa-user"></i> Ingresar con:</h4>
+        <center>
+            <a class="btn-floating btn-large fb-bg waves-effect waves-light" ng-click="facebook()"><i class="fa fa-facebook"> </i></a>
+            <a class="btn-floating btn-large tw-bg waves-effect waves-light" ng-click="twitter()"><i class="fa fa-twitter"> </i></a>
+            <a class="btn-floating btn-large gplus-bg waves-effect waves-light" ng-click="google()"><i class="fa fa-google-plus"> </i></a>
+        </center>
+    </div>
+    <div class="col-xs-12 col-sm-4 col-md-4"></div>
+</div>
