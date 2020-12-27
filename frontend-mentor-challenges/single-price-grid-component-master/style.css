@@ -112,7 +112,7 @@ footer {
 .subscription__info {
     color: #fff;
     margin-top: 10px;
-    opacity: .7;
+    opacity: .9;
     margin-bottom: 35px;
 }
 
@@ -155,7 +155,7 @@ footer {
     list-style: none;
     margin-top: 15px;
     color: #fff;
-    opacity: .5;
+    opacity: .9;
 }
 
 .why__info li {
