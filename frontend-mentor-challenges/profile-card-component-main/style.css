@@ -107,6 +107,7 @@ color: #fff;
 }
 
 .interaction__qty {
+    color: var(--very-dark-desaturated-blue);
     font-weight: bold;
 }
 
