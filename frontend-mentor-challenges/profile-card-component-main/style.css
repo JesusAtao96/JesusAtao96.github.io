@@ -25,7 +25,8 @@ body {
   align-items: center;
   position: relative;
   background-color: var(--dark-cyan);
-  background-image: url('./images/bg-pattern-top.svg'), url('./images/bg-pattern-bottom.svg');
+  background-image: url("./images/bg-pattern-top.svg"),
+    url("./images/bg-pattern-bottom.svg");
   background-repeat: no-repeat;
   background-position: right 50vw bottom 50vh, left 50vw top 50vh;
 }
@@ -38,87 +39,87 @@ body {
 }
 
 .attribution a {
-color: #fff;
+  color: #fff;
 }
 
 .card {
-    width: 375px;
-    height: 360px;
-    background-color: #fff;
-    border-radius: 15px;
-    display: grid;
-    grid-template-rows: 2fr 2fr 1fr;
-    overflow: hidden;
-    box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.2);
+  width: 375px;
+  height: 360px;
+  background-color: #fff;
+  border-radius: 15px;
+  display: grid;
+  grid-template-rows: 2fr 2fr 1fr;
+  overflow: hidden;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.2);
 }
 
 .card__bg {
-    background: url('./images/bg-pattern-card.svg');
-    width: 100%;
+  background: url("./images/bg-pattern-card.svg");
+  width: 100%;
 }
 
 .card__profile {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .profile__avatar {
-    border-radius: 50%;
-    border: 4px solid #fff;
-    position: absolute;
-    top: -52px;
-    left: 50%;
-    transform: translate(-50%);
+  border-radius: 50%;
+  border: 4px solid #fff;
+  position: absolute;
+  top: -52px;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 .profile__name {
-    font-weight: bold;
-    margin-top: 50px;
-    color: var(--very-dark-desaturated-blue)
+  font-weight: bold;
+  margin-top: 50px;
+  color: var(--very-dark-desaturated-blue);
 }
 
 .profile__name span {
-    color: var(--dark-grayish-blue);
-    font-weight: normal;
-    margin-left: 5px;
+  color: var(--dark-grayish-blue);
+  font-weight: normal;
+  margin-left: 5px;
 }
 
 .profile__city {
-    color: var(--dark-grayish-blue);
-    font-size: .8rem;
-    margin-top: 10px;
-    letter-spacing: 1px;
+  color: var(--dark-grayish-blue);
+  font-size: 0.8rem;
+  margin-top: 10px;
+  letter-spacing: 1px;
 }
 
 .card__interactions {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    border-top: 1px solid lightgray;
-    padding: 25px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid lightgray;
+  padding: 25px 0;
 }
 
 .interaction {
-    justify-self: center;
-    align-self: center;
-    text-align: center;
+  justify-self: center;
+  align-self: center;
+  text-align: center;
 }
 
 .interaction__qty {
-    color: var(--very-dark-desaturated-blue);
-    font-weight: bold;
+  color: var(--very-dark-desaturated-blue);
+  font-weight: bold;
 }
 
 .interaction__title {
-    color: var(--dark-grayish-blue);
-    font-size: .6rem;
-    letter-spacing: 2px;
+  color: var(--dark-grayish-blue);
+  font-size: 0.6rem;
+  letter-spacing: 2px;
 }
 
 @media screen and (max-width: 550px) {
-    .card {
-        width: 330px;
-    }
+  .card {
+    width: 330px;
+  }
 }
