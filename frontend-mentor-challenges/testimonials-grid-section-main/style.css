@@ -124,7 +124,7 @@ margin-top: 40px;
 .card--jeanette {
     grid-area: jeanette;
     background-color: var(--white);
-    color: var(--very-dark-blackish-blue);
+    color: var(--very-dark-grayish-blue);
 }
 
 .card--patrick {
@@ -140,6 +140,7 @@ margin-top: 40px;
 .card--kira {
     grid-area: kira;
     background-color: var(--white);
+    color: var(--very-dark-grayish-blue);
 }
 
 @media screen and (max-width: 1000px) {
