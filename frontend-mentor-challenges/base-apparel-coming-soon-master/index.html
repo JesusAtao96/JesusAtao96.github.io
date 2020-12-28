@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Base Apparel coming soon page</title>
+  
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <img src="./images/logo.svg" alt="">
+  </header>
+
+  <section class="container">
+    <h1 class="container__title">We're <span>coming soon</span></h1>
+
+    <div class="container__description">
+      Hello fellow shoppers! We're currently building our new fashion store. 
+      Add your email below to stay up-to-date with announcements and our launch deals.
+    </div>
+
+    <form id="form" novalidate>
+      <div class="input-group">
+        <input class="input" type="email" placeholder="Email Address">
+        <img class="icon" src="./images/icon-error.svg" alt="Error">
+        <button class="submit">
+          <img class="submit__img" src="./images/icon-arrow.svg" alt="Arrow">
+        </button>
+      </div>
+      <span id="error-message" class="invalid-message">Please provide a valid email</span>
+    </form>
+  </section>
+
+  <div class="bg"></div>
+  
+  <!-- <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/JesusAtao96" target="_blank">Jesús Alejandro Atao</a>.
+    </p>
+  </footer> -->
+
+  <script src="script.js"></script>
+</body>
+</html>
