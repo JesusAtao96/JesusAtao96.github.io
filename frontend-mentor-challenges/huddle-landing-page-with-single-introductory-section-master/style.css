@@ -129,6 +129,11 @@ body {
     fill: var(--soft-magenta);
 }
 
+.footer__icon:last-child:hover svg path {
+    fill: none;
+    stroke: var(--soft-magenta);
+}
+
 @keyframes MoveUpDown {
     0%, 100% {
         transform: translateY(-15px);
