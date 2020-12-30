@@ -8,44 +8,99 @@
   
   <title>Frontend Mentor | [Challenge Name Here]</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="bg-top-left"></div>
 
-  Samuel Green
-  Available to Walk
+  <div class="left">
+    <div class="phone">
+      <div class="phone__hardware"></div>
 
-  That sounds great. I’d be happy with that.
+      <div class="chat">
+        <div class="chat__header">
+          <svg class="chat__back" width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.80881 0.663086L0.101807 6.37009L5.80881 12.0771L7.22281 10.6631L2.92981 6.37009L7.22281 2.07709L5.80881 0.663086Z" fill="#fff"/>
+          </svg>
+            
+          <img class="chat__avatar" src="./images/avatar.jpg" alt="Avatar">
+          <p class="chat__name">Samuel Green</p>
+          <span class="chat__available">Available to Walk</span>
+            
+          <svg class="chat__more" width="4" height="16" viewBox="0 0 4 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 6C0.9 6 0 6.9 0 8C0 9.1 0.9 10 2 10C3.1 10 4 9.1 4 8C4 6.9 3.1 6 2 6ZM2 0C0.9 0 0 0.9 0 2C0 3.1 0.9 4 2 4C3.1 4 4 3.1 4 2C4 0.9 3.1 0 2 0ZM2 12C0.9 12 0 12.9 0 14C0 15.1 0.9 16 2 16C3.1 16 4 15.1 4 14C4 12.9 3.1 12 2 12Z" fill="#fff"/>
+          </svg>
+        </div>
+        <div class="chat__body">
+          <div class="chat__message chat__message--user1">
+            That sounds great. I’d be happy with that.
+          </div>
 
-  Could you send over some pictures of your dog, please?
+          <div class="chat__message chat__message--user1">
+            Could you send over some pictures of your dog, please?
+          </div>
 
-  Here are a few pictures. She’s a happy girl!
+          <div class="chat__photos chat__photos--user-2">
+            <img class="chat__photo" src="./images/dog-image-1.jpg" alt="Dog 1">
+            <img class="chat__photo" src="./images/dog-image-2.jpg" alt="Dog 2">
+            <img class="chat__photo" src="./images/dog-image-3.jpg" alt="Dog 3">
+          </div>
 
-  Can you make it?
+          <div class="chat__message chat__message--user2">
+            Here are a few pictures. She’s a happy girl!
+          </div>
 
-  She looks so happy! The time we discussed works. How long shall I take her out for?
+          <div class="chat__message chat__message--user2">
+            Can you make it?
+          </div>
 
-  30 minute walk
-  $29
+          <div class="chat__message chat__message--user1">
+            She looks so happy! The time we discussed works. How long shall I take her out for?
+          </div>
 
-  1 hour walk
-  $49
+          <div class="chat__price chat__price--user1">
+            <div class="chat__circle"></div>
+            <p class="chat__time">30 minute walk</p>
+            <span class="chat__cost">$29</span>
+          </div>
 
-  Type a message…
+          <div class="chat__price chat__price--user1">
+            <div class="chat__circle"></div>
+            <p class="chat__time">1 hour walk</p>
+            <span class="chat__cost">$49</span>
+          </div>
+        </div>
+        <div class="chat__footer">
+          <input type="text" class="chat__input" placeholder="Type a message…">
+          <button class="chat__btn">
+            <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.70697 11.707L7.41397 5.99997L1.70697 0.292969L0.292969 1.70697L4.58597 5.99997L0.292969 10.293L1.70697 11.707Z" fill="#fff"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  Simple booking
+  <section class="right">
+    <h1 class="right__title">Simple booking</h1>
 
-  Stay in touch with our dog walkers through the chat interface. This makes it easy to 
-  discuss arrangements and make bookings. Once the walk has been completed you can rate 
-  your walker and book again all through the chat.
+    <p class="right__text">Stay in touch with our dog walkers through the chat interface. This makes it easy to 
+      discuss arrangements and make bookings. Once the walk has been completed you can rate 
+      your walker and book again all through the chat.</p>
+  </section>
+
+  <div class="bg-bottom-right"></div>
   
-  <div class="attribution">
+
+  
+
+  
+  
+  <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </div> -->
 </body>
 </html>
