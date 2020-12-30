@@ -307,7 +307,7 @@ body {
     body {
         grid-template-columns: 1fr;
         grid-template-rows: min-content 1fr;
-        margin-top: 60px 0;
+        margin: 60px 0;
         justify-items: center;
     }
 
