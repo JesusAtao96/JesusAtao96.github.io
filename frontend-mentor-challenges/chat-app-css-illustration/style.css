@@ -42,7 +42,7 @@ body {
     height: 85vh;
     width: 630px;
     max-width: 50%;
-    background: linear-gradient(var(--light-magenta), var(--light-violet));
+    background: linear-gradient(to left bottom, var(--light-magenta) 0, var(--light-violet) 100%);
     border-bottom-right-radius: 100%;
     border-bottom-left-radius: 100%;
     position: fixed;
