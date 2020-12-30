@@ -314,7 +314,7 @@ body {
     .right {
         text-align: center;
         margin: auto 20px;
-        margin-top: 45px;
+        padding: 45px 0;
     }
 
     .right__text {
