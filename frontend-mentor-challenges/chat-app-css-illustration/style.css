@@ -260,7 +260,7 @@ body {
 }
 
 .chat__input:not(:placeholder-shown) ~ .chat__btn {
-    transform: translate(-10px, -15px);
+    transform: translate(-10px, -12px);
     cursor: pointer;
 }
 
