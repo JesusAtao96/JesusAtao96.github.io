@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1609450453475,
+  "timestamp": 1609451297966,
   "index": "/frontend-mentor-challenges/rest-countries-api-with-color-theme-switcher/index.html",
   "assetGroups": [
     {
@@ -11,7 +11,7 @@
         "ignoreVary": true
       },
       "urls": [
-        "/frontend-mentor-challenges/rest-countries-api-with-color-theme-switcher/5.fbbf31122557f8d9be94.js",
+        "/frontend-mentor-challenges/rest-countries-api-with-color-theme-switcher/5.3676bcfdbe900458d3fc.js",
         "/frontend-mentor-challenges/rest-countries-api-with-color-theme-switcher/6.7de8e31bb74159109619.js",
         "/frontend-mentor-challenges/rest-countries-api-with-color-theme-switcher/common.5669942f462d42140ef9.js",
         "/frontend-mentor-challenges/rest-countries-api-with-color-theme-switcher/favicon.ico",
@@ -19,8 +19,8 @@
         "/frontend-mentor-challenges/rest-countries-api-with-color-theme-switcher/main.c7bda30ed8e5f893059f.js",
         "/frontend-mentor-challenges/rest-countries-api-with-color-theme-switcher/manifest.webmanifest",
         "/frontend-mentor-challenges/rest-countries-api-with-color-theme-switcher/polyfills.7a965888daba3fbc4385.js",
-        "/frontend-mentor-challenges/rest-countries-api-with-color-theme-switcher/runtime.125043638384e6751029.js",
-        "/frontend-mentor-challenges/rest-countries-api-with-color-theme-switcher/styles.58d07eb13c7ef4aba4bc.css"
+        "/frontend-mentor-challenges/rest-countries-api-with-color-theme-switcher/runtime.b23ca85f429f8fc6532a.js",
+        "/frontend-mentor-challenges/rest-countries-api-with-color-theme-switcher/styles.f814bec6a8518a400936.css"
       ],
       "patterns": []
     },
@@ -46,7 +46,7 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "/frontend-mentor-challenges/rest-countries-api-with-color-theme-switcher/5.fbbf31122557f8d9be94.js": "f0ec192b75a4762d0448f6d2ba856548bc777809",
+    "/frontend-mentor-challenges/rest-countries-api-with-color-theme-switcher/5.3676bcfdbe900458d3fc.js": "68830046a450628d8ec33a196bc8353cbd04a43e",
     "/frontend-mentor-challenges/rest-countries-api-with-color-theme-switcher/6.7de8e31bb74159109619.js": "a9683f9bb758b5c064cfbf8fa2c48bb37f672947",
     "/frontend-mentor-challenges/rest-countries-api-with-color-theme-switcher/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
     "/frontend-mentor-challenges/rest-countries-api-with-color-theme-switcher/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
@@ -58,12 +58,12 @@
     "/frontend-mentor-challenges/rest-countries-api-with-color-theme-switcher/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "/frontend-mentor-challenges/rest-countries-api-with-color-theme-switcher/common.5669942f462d42140ef9.js": "820c72b98aa73e3af5877f5da74b57617ac9adeb",
     "/frontend-mentor-challenges/rest-countries-api-with-color-theme-switcher/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/frontend-mentor-challenges/rest-countries-api-with-color-theme-switcher/index.html": "d543b39c4bf94b40e9c6237ba186d7b4f7e38ba8",
+    "/frontend-mentor-challenges/rest-countries-api-with-color-theme-switcher/index.html": "a845e8343a0826d989dad73de535cb09f4343d18",
     "/frontend-mentor-challenges/rest-countries-api-with-color-theme-switcher/main.c7bda30ed8e5f893059f.js": "cad1b4b43208d4b20e5ef2e9dea8bbf3cc5caeb0",
     "/frontend-mentor-challenges/rest-countries-api-with-color-theme-switcher/manifest.webmanifest": "7437b7c68142bc886b0fcefd7927df741f4fc7f1",
     "/frontend-mentor-challenges/rest-countries-api-with-color-theme-switcher/polyfills.7a965888daba3fbc4385.js": "b6380ed034569010e4ec859b66fbc7c7132365a3",
-    "/frontend-mentor-challenges/rest-countries-api-with-color-theme-switcher/runtime.125043638384e6751029.js": "68b08418e1d209675e6021dc8bb17596574fc0c8",
-    "/frontend-mentor-challenges/rest-countries-api-with-color-theme-switcher/styles.58d07eb13c7ef4aba4bc.css": "24e8e7d2b2fe35bf2707b7ce734134a76794d3fe"
+    "/frontend-mentor-challenges/rest-countries-api-with-color-theme-switcher/runtime.b23ca85f429f8fc6532a.js": "dc4d28613c4895eec1819c653c6451d60b935b80",
+    "/frontend-mentor-challenges/rest-countries-api-with-color-theme-switcher/styles.f814bec6a8518a400936.css": "fd600b2507d82632317e3d954930b8ccb867c086"
   },
   "navigationUrls": [
     {
