@@ -58,10 +58,10 @@
     }
 
     &__social {
+        cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
-        cursor: pointer;
 
         &:hover {
             path {

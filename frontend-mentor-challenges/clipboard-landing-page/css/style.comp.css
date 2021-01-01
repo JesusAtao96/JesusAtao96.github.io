@@ -292,10 +292,10 @@ body {
         grid-template-columns: repeat(3, min-content);
         justify-content: center; } }
   .footer__social {
+    cursor: pointer;
     display: flex;
     align-items: center;
-    justify-content: center;
-    cursor: pointer; }
+    justify-content: center; }
     .footer__social:hover path {
       fill: #26baa4; }
     .footer__social path {
