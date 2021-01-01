@@ -294,7 +294,8 @@ body {
   .footer__social {
     display: flex;
     align-items: center;
-    justify-content: center; }
+    justify-content: center;
+    cursor: pointer; }
     .footer__social:hover path {
       fill: #26baa4; }
     .footer__social path {
