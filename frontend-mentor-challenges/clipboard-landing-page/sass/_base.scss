@@ -1,0 +1,56 @@
+// COLOR VARIABLES
+$strong-cyan: hsl(171, 66%, 44%);
+$light-blue: hsl(233, 100%, 69%);
+
+$dark-grayish-blue: hsl(210, 10%, 33%);
+$grayish-blue: hsl(201, 11%, 66%);
+
+$footer-background: #F5F6F8;
+
+// FONT VARIABLES
+$font-primary: 'Bai Jamjuree', sans-serif;
+
+// Responsive Breakpoints -> 1em = 16px
+$bp-large: 62.5em; // 1000px / 16px = 62.5
+$bp-medium: 50em; // 800px / 16px = 50
+$bp-small: 37.5em; // 600px / 16px = 37.5
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 112.5%; // 18px/16px = 112.5% -> 1rem = 18px
+
+    @media only screen and (max-width: $bp-small) {
+        font-size: 93%;
+    }
+}
+
+body {
+    font-family: $font-primary;
+    color: $dark-grayish-blue;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.container {
+    /* display: grid;
+    grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+    grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; // 1140px / 8 = 142.5 => 14rem -- 1rem = 10px
+
+    @media only screen and (max-width: $bp-large) {
+        grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+        grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+        grid-template-rows: 6rem calc(100vh - 6rem);
+    } */
+}
+
