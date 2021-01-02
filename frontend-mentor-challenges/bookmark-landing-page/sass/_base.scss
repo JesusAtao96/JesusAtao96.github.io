@@ -1,11 +1,13 @@
 // COLOR VARIABLES
-$strong-cyan: hsl(171, 66%, 44%);
-$light-blue: hsl(233, 100%, 69%);
+$soft-blue: hsl(231, 69%, 60%);
+$soft-red: hsl(0, 94%, 66%);
+$gray-light: #f7f7f7;
 
-$dark-grayish-blue: hsl(210, 10%, 33%);
-$grayish-blue: hsl(201, 11%, 66%);
+$grayish-blue: hsl(229, 8%, 60%);
+$very-dark-blue: hsl(229, 31%, 21%);
 
-$footer-background: #F5F6F8;
+$white: #fff;
+$black: #000;
 
 // FONT VARIABLES
 $font-primary: 'Rubik', sans-serif;
@@ -27,6 +29,10 @@ html {
     box-sizing: border-box;
     font-size: 112.5%; // 18px/16px = 112.5% -> 1rem = 18px
 
+    @media only screen and (max-width: $bp-large) {
+        font-size: 106.25%;
+    }
+
     @media only screen and (max-width: $bp-small) {
         font-size: 93%;
     }
@@ -34,7 +40,7 @@ html {
 
 body {
     font-family: $font-primary;
-    color: $dark-grayish-blue;
+    color: $grayish-blue;
     font-weight: 300;
     line-height: 1.6;
 }

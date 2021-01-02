@@ -1,20 +1,26 @@
+.heading-1,
+.heading-2,
+.heading-3 {
+    color: $very-dark-blue;
+    font-weight: 500;
+
+    &--center {
+        text-align: center;
+    }
+}
+
 .heading-1 {
-    font-weight: 600;
-    font-size: 2.2rem;
+    font-size: 2rem;
     line-height: 1;
-    text-align: center;
 }
 
 .heading-2 {
-    font-weight: 600;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     line-height: 1;
-    text-align: center;
 }
 
 .heading-3 {
-    font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     line-height: 1;
 }
 
@@ -22,11 +28,14 @@
 .paragraph-2,
 .paragraph-3 {
     color: $grayish-blue;
+
+    &--center {
+        text-align: center;
+    }
 }
 
 .paragraph-1 {
-    font-size: .96rem;
-    text-align: center;
+    font-size: 1.1rem;
 }
 
 .paragraph-2 {
@@ -38,72 +47,105 @@
 }
 
 .link {
-    font-weight: 400;
-    color: $dark-grayish-blue;
+    font-weight: 500;
+    color: $very-dark-blue;
     text-decoration: none;
-    font-size: .9rem;
+    font-size: .7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 
     &:hover {
-        color: $strong-cyan;
+        color: $soft-red;
+        /* filter : brightness(120%) */
     }
 }
 
 .btn {
     color: #fff;
-    border: none;
-    border-radius: 1.38rem;
+    border-radius: 5px;
     font-size: .8rem;
-    padding: 16px 40px;
+    padding: 10px 25px;
     cursor: pointer;
     transition: all .2s;
-    letter-spacing: 0.083rem;
     outline: 0;
-    width: 220px;
-
-    &:hover {
-        opacity: .7;
-        transform: translateY(-2px);
-    }
+    max-width: 220px;
+    text-decoration: none;
+    font-weight: 500;
+    border: 2px solid transparent;
+    display: block;
+    text-align: center;
 
     @media only screen and (max-width: $bp-small) {
         width: 100%;
     }
 
     &--primary {
-        justify-self: end;
-        background-color: $strong-cyan;
-        box-shadow: 0px 14px 1px -12px rgba($strong-cyan, .7), 0 5px 8px 1px rgba($strong-cyan, .3);
+        background-color: $soft-blue;
+        box-shadow: 0 6px 9px -4px rgba($grayish-blue, 0.3);
+
+        &:hover {
+            background-color: $white;
+            color: $soft-blue;
+            border: 2px solid $soft-blue;
+        }
     }
 
     &--secondary {
-        justify-self: start;
-        background-color: $light-blue;
-        box-shadow: 0px 14px 1px -12px rgba($light-blue, .7), 0 5px 8px 1px rgba($light-blue, .3);
+        background-color: $gray-light;
+        color: $very-dark-blue;
+        box-shadow: 0 6px 9px -4px rgba($grayish-blue, 0.3);
+
+        &:hover {
+            background-color: $white;
+            border: 2px solid $very-dark-blue;
+        }
+    }
+
+    &--cta {
+        background-color: $soft-red;
+        box-shadow: 0 6px 9px -4px rgba($grayish-blue, 0.3);
+
+        &:hover {
+            background-color: $white;
+            color: $soft-red;
+            border: 2px solid $soft-red;
+        }
+    }
+
+    &--small {
+        padding: 7px 30px;
+        font-size: .7rem;
+        font-weight: 400;
+        letter-spacing: 1.5px;
+    }
+
+    &--uppercase {
+        text-transform: uppercase;
     }
 }
 
 .spacing {
-    max-width: 660px;
+    max-width: 1100px;
     width: 90%;
     margin: 0 auto;
-
-    @media only screen and (max-width: $bp-small) {
-        width: 85%;
-    }
 }
 
 .separator-1 {
-    margin-bottom: 5rem;
+    margin-bottom: 10rem;
 }
 
 .separator-2 {
-    margin-bottom: 2.5rem;
+    margin-bottom: 5rem;
 }
 
 .separator-3 {
-    margin-bottom: 1rem;
+    margin-bottom: 2.5rem;
 }
 
 .separator-4 {
-    margin-bottom: .7rem;
+    margin-bottom: 1.25rem;
+}
+
+.separator-5 {
+    margin-bottom: .8rem;
 }

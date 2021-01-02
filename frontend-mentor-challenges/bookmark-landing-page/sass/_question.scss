@@ -1,0 +1,27 @@
+.question {
+    &__paragraph {
+        width: 580px;
+        max-width: 90%;
+        margin: 0 auto 2rem auto;
+    }
+
+    &__radio {
+        display: none;
+    }
+
+    &__label {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    &__content {
+        display: none;
+    }
+
+    #collapse1:checked ~ &__content--1,
+    #collapse2:checked ~ &__content--2,
+    #collapse3:checked ~ &__content--3,
+    #collapse4:checked ~ &__content--4 { 
+        display: block; 
+    }
+}
