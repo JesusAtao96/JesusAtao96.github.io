@@ -1,8 +1,25 @@
+%question-spacing {
+    width: 580px;
+    margin: 0 auto 2rem auto;
+    max-width: 100%;
+}
+
 .question {
     &__paragraph {
-        width: 580px;
-        max-width: 90%;
-        margin: 0 auto 2rem auto;
+        @extend %question-spacing;
+    }
+
+    &__collapses {
+        @extend %question-spacing;
+    }
+
+    &__collapse {
+        padding: 20px 10px;
+        border-bottom: 1px solid rgba($grayish-blue, .55);
+
+        &:first-child {
+            border-top: 1px solid rgba($grayish-blue, .55);
+        }
     }
 
     &__radio {
@@ -10,18 +27,46 @@
     }
 
     &__label {
-        display: inline-block;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         cursor: pointer;
+        /* padding: 20px 0; */
+        color: $very-dark-blue;
+        font-weight: 500;
+        font-size: 1.1rem;
+
+        &:hover {
+            color: $soft-red;
+        }
+    }
+
+    &__arrow {
+        margin-left: 10px;
+        transition: transform .4s;
+    }
+
+    &__radio:checked ~ &__label &__arrow {
+        transform: rotate(540deg);
+        path {
+            stroke: $soft-red;
+        }
     }
 
     &__content {
         display: none;
+        animation: accordion 1s cubic-bezier(0, 0.9, 0, 1.05);
     }
 
-    #collapse1:checked ~ &__content--1,
-    #collapse2:checked ~ &__content--2,
-    #collapse3:checked ~ &__content--3,
-    #collapse4:checked ~ &__content--4 { 
-        display: block; 
+    &__radio:checked ~ &__content {
+        display: block;
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+
+    &__btn {
+        margin: 60px auto 0 auto;
+        padding: 7px 0;
+        max-width: 120px;
     }
 }

@@ -56,7 +56,11 @@
 
     &:hover {
         color: $soft-red;
-        /* filter : brightness(120%) */
+    }
+
+    &--footer {
+        color: $gray-light;
+        font-weight: 400;
     }
 }
 
