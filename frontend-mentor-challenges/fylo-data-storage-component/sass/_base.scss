@@ -36,18 +36,27 @@ html {
 body {
     font-family: $font-primary;
     background-color: $very-dark-blue;
+    background-image: url(../images/bg-desktop.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
     color: $primary-text;
     height: 100vh;
     display: grid;
     grid-template-rows: 1fr min-content 1fr;
     grid-template-columns: 1fr 1fr 1fr;
+    position: relative;
 
     @media only screen and (max-width: $bp-large) {
         grid-template-columns: 50px 1fr 50px;
+        background-size: auto;
     }
 
     @media only screen and (max-width: $bp-small) {
         grid-template-columns: 20px 1fr 20px;
+        background-image: url(../images/bg-mobile.png);
+        background-size: cover;
+
     }
 }
 
