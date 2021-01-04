@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <title>Frontend Mentor | Fylo data storage component</title>
+</head>
+<body>
+  <div class="container">
+    <div class="option">
+      <img src="./images/logo.svg" alt="" class="option__logo">
+
+      <div class="option__types">
+        <div class="option__type">
+          <img src="./images/icon-document.svg" alt="Document Icon" class="option__icon">
+        </div>
+        <div class="option__type">
+          <img src="./images/icon-folder.svg" alt="Folder Icon" class="option__icon">
+        </div>
+        <div class="option__type">
+          <img src="./images/icon-upload.svg" alt="Upload Icon" class="option__icon">
+        </div>
+      </div>
+    </div>
+    <div class="progress">
+      <div class="progress__left">
+        <p class="progress__number">185</p> <span class="progress__detail">GB Left</span>
+      </div>
+
+      <p class="progress__text">
+        You’ve used <span class="progress__text--white">815 GB</span> of your storage
+      </p>
+      
+      <div class="progress__bg">
+        <div class="progress__line"></div>
+      </div>
+      
+      <div class="progress__info">
+        <p class="progress__text--white">0 GB</p>
+        <p class="progress__text--white">1000 GB</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
