@@ -1,0 +1,70 @@
+.selector {
+    background-image: url(../images/bg-pentagon.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 329px;
+    height: 500px;
+    margin: 0 auto;
+    position: relative;
+        
+    @media only screen and (max-width: $bp-small) {
+        width: 210px;
+        height: 400px;
+    }
+
+    &__type {
+        background-color: $white;
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 15px solid transparent;
+        cursor: pointer;
+        
+        @media only screen and (max-width: $bp-small) {
+            width: 80px;
+            height: 80px;
+        }
+
+        &--scissors {
+            border-color: $scissors-color;
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &--paper {
+            border-color: $paper-color;
+            position: absolute;
+            top: 40%;
+            right: -60px;
+            transform: translateY(-40%);
+        }
+
+        &--rock {
+            border-color: $rock-color;
+            position: absolute;
+            bottom: 30px;
+            right: 0;
+        }
+
+        &--lizard {
+            border-color: $lizard-color;
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+        }
+
+        &--spock {
+            border-color: $spock-color;
+            position: absolute;
+            top: 40%;
+            left: -60px;
+            transform: translateY(-40%);
+        }
+    }
+}

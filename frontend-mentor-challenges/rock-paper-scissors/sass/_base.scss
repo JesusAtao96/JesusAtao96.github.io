@@ -1,0 +1,40 @@
+// COLOR VARIABLES
+$primary-color: #182142;
+$primary-color-light: #36455C;
+
+$rock-color: #DB3855;
+$paper-color: #4C67F6;
+$scissors-color: #EEA219;
+$lizard-color: #8D5DE7;
+$spock-color: #4CBCD2;
+
+$white: #fff;
+$black: #000;
+
+// FONT VARIABLES
+$font-primary: 'Rubik', sans-serif;
+
+// Responsive Breakpoints -> 1em = 16px
+$bp-large: 62.5em; // 1000px / 16px = 62.5
+$bp-medium: 50em; // 800px / 16px = 50
+$bp-small: 37.5em; // 600px / 16px = 37.5
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-primary;
+    background-image: radial-gradient($primary-color-light, $primary-color);
+    height: 100vh;
+    font-weight: 300;
+    line-height: 1.6;
+}
