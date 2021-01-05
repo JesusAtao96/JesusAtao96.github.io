@@ -12,17 +12,25 @@ html {
 body {
   font-family: "Raleway", sans-serif;
   background-color: #0c122c;
+  background-image: url(../images/bg-desktop.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
   color: #b5bad0;
   height: 100vh;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
-  grid-template-columns: 1fr 1fr 1fr; }
+  grid-template-columns: 1fr 1fr 1fr;
+  position: relative; }
   @media only screen and (max-width: 62.5em) {
     body {
-      grid-template-columns: 50px 1fr 50px; } }
+      grid-template-columns: 50px 1fr 50px;
+      background-size: auto; } }
   @media only screen and (max-width: 37.5em) {
     body {
-      grid-template-columns: 20px 1fr 20px; } }
+      grid-template-columns: 20px 1fr 20px;
+      background-image: url(../images/bg-mobile.png);
+      background-size: cover; } }
 
 .container {
   grid-row: 2 / 3;
@@ -41,15 +49,6 @@ body {
       min-width: 100%;
       max-width: 1000px; } }
 
-/* @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes accordion {
-    from   { opacity: 0; transform: translateX(-100px); }
-    to { opacity: 1; transform: translateX(0); }
-} */
 @keyframes loading {
   from {
     width: 0px; }
