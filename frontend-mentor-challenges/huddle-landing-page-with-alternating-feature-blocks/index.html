@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@600&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <title>Frontend Mentor | Huddle landing page with alternating feature blocks</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <!-- <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style> -->
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__container">
+      <div class="header__nav">
+        <img src="./images/logo.svg" alt="Logo" class="header__logo">
+
+        <a href="#" class="btn btn--secondary btn--small">Try It Free</a>
+      </div>
+      <div class="header__info">
+        <h1 class="header__title">Build The Community Your Fans Will Love</h1>
+
+        <div class="header__description">
+          Huddle re-imagines the way we build communities. You have a voice, but so does your audience.
+          Create connections with your users as you engage in genuine discussion.
+        </div>
+
+        <a href="#" class="btn btn--primary btn--medium">Get Started For Free</a>
+      </div>
+      <div class="header__bg"></div>
+    </div>
+  </header>
+
+  <section class="feature">
+    <div class="feature__box">
+      <div class="feature__info">
+        <div class="feature__content">
+          <h3 class="feature__title">Grow Together</h3>
+          <div class="feature__description">
+            Generate meaningful discussions with your audience and build a strong, loyal community.
+            Think of the insightful conversations you miss out on with a feedback form.
+          </div>
+        </div>
+      </div>
+      <div class="feature__bg">
+        <img class="feature__img" src="./images/illustration-grow-together.svg" alt="Grow Together">
+      </div>
+    </div>
+    <div class="feature__box feature__box--reverse">
+      <div class="feature__info">
+        <div class="feature__content feature__content--reverse">
+          <h3 class="feature__title">Flowing Conversations</h3>
+          <div class="feature__description">
+            You wouldn't paginate a conversation in real life, so why do it online? Our threads
+            have just-in-time loading for a more natural flow.
+          </div>
+        </div>
+      </div>
+      <div class="feature__bg feature__bg--reverse">
+        <img class="feature__img feature__img--reverse" src="./images/illustration-flowing-conversation.svg"
+          alt="Flowing Conversation">
+      </div>
+    </div>
+    <div class="feature__box">
+      <div class="feature__info">
+        <div class="feature__content">
+          <h3 class="feature__title">Your Users</h3>
+          <div class="feature__description">
+            It takes no time at all to integrate Huddle with your app's authentication solution.
+            This means, once signed in to your app, your users can start chatting immediately.
+          </div>
+        </div>
+      </div>
+      <div class="feature__bg">
+        <img class="feature__img" src="./images/illustration-your-users.svg" alt="Your Users">
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__build">
+      <h2 class="footer__title">Ready To Build Your Community?</h2>
+
+      <a href="#" class="btn btn--primary btn--large">Get Started For Free</a>
+    </div>
+
+    <div class="footer__container">
+      <div class="footer__info">
+        <img src="./images/logo-white.svg" alt="Logo" class="footer__logo">
+
+        <div class="footer__contents">
+          <div class="footer__content footer__content--text">
+            <p class="footer__text">
+              <img class="footer__img" src="./images/icon-location.svg" alt="Location"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua
+            </p>
+            <p class="footer__text"><img class="footer__img" src="./images/icon-phone.svg" alt="Location"> +1-543-123-4567</p>
+            <p class="footer__text"><img class="footer__img" src="./images/icon-email.svg" alt="Location"> example@huddle.com</p>
+          </div>
+          <div class="footer__content footer__content--link">
+            <a class="footer__link" href="#">About Us</a>
+            <a class="footer__link" href="#">What We Do</a>
+            <a class="footer__link" href="#">FAQ</a>
+          </div>
+          <div class="footer__content footer__content--link">
+            <a class="footer__link" href="#">Career</a>
+            <a class="footer__link" href="#">Blog</a>
+            <a class="footer__link" href="#">Contact Us</a>
+          </div>
+          <div class="footer__content footer__content--icon">
+            <div class="footer__icon">
+              <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.54745 12V6.53513H6.62061L6.92877 4.39546H4.54745V3.03258C4.54745 2.41515 4.7409 1.99242 5.73736 1.99242H7V0.0847801C6.38593 0.0261042 5.7681 -0.00190033 5.15028 9.9991e-05C3.3178 9.9991e-05 2.05966 0.994924 2.05966 2.82121V4.39146H0V6.53113H2.06416V12H4.54745Z" fill="white"/>
+              </svg>
+            </div>
+            <div class="footer__icon footer__icon--separator">
+              <svg width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.3562 3.23982C14.3668 3.38235 14.3668 3.52406 14.3668 3.66577C14.3668 8.00263 11.067 13 5.03643 13C3.17851 13 1.45247 12.4617 0 11.5267C0.26379 11.5568 0.51781 11.5674 0.792184 11.5674C2.32526 11.5674 3.73621 11.0494 4.86383 10.1658C3.42194 10.1356 2.21372 9.19089 1.79687 7.89105C1.99959 7.92119 2.20313 7.94155 2.41645 7.94155C2.71036 7.94155 3.0059 7.90083 3.28028 7.82997C1.77651 7.52537 0.650519 6.20517 0.650519 4.61051V4.56979C1.08773 4.81331 1.59495 4.96561 2.1323 4.98597C1.24893 4.39794 0.670059 3.39212 0.670059 2.25435C0.670059 1.64516 0.832078 1.08646 1.11622 0.599424C2.73071 2.58909 5.15774 3.88974 7.87869 4.03226C7.82821 3.78793 7.79727 3.53464 7.79727 3.28054C7.79727 1.4725 9.25951 0 11.0767 0C12.0212 0 12.8736 0.395815 13.4728 1.03596C14.2137 0.893434 14.9237 0.61897 15.5538 0.243516C15.3104 1.00501 14.7918 1.64516 14.1119 2.05156C14.7722 1.97989 15.4122 1.79746 16 1.54335C15.5538 2.19327 14.9961 2.77233 14.3562 3.23982Z" fill="white"/>
+              </svg>
+            </div>
+            <div class="footer__icon">
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.5 3C4.56641 3 3 4.56699 3 6.49962C3 8.43301 4.56641 10 6.5 10C8.43208 10 10 8.43301 10 6.49962C10 4.56699 8.43208 3 6.5 3ZM6.5 8.77366C5.244 8.77366 4.22572 7.75549 4.22572 6.50038C4.22572 5.24451 5.244 4.2271 6.5 4.2271C7.756 4.2271 8.77277 5.24451 8.77277 6.50038C8.77277 7.75549 7.756 8.77366 6.5 8.77366Z" fill="white"/>
+                <path d="M10 4C10.5523 4 11 3.55228 11 3C11 2.44771 10.5523 2 10 2C9.44772 2 9 2.44771 9 3C9 3.55228 9.44772 4 10 4Z" fill="white"/>
+                <path d="M12.6557 2.23874C12.3171 1.36732 11.6277 0.678255 10.7549 0.34165C10.2503 0.152085 9.71679 0.0504546 9.17681 0.0389221C8.48162 0.0086493 8.26144 0 6.49856 0C4.73567 0 4.50972 -7.24982e-08 3.8203 0.0389221C3.28176 0.0497338 2.74828 0.151364 2.24367 0.34165C1.37017 0.678255 0.680753 1.36732 0.342903 2.23874C0.153043 2.74329 0.051255 3.27523 0.0404265 3.81437C0.00938471 4.50776 0 4.7276 0 6.48847C0 8.24861 -5.37858e-09 8.47278 0.0404265 9.16256C0.051255 9.70171 0.153043 10.2336 0.342903 10.7389C0.681475 11.6096 1.37089 12.2987 2.24439 12.636C2.74683 12.8321 3.28032 12.9431 3.82175 12.9604C4.51694 12.9906 4.73712 13 6.5 13C8.26288 13 8.48884 13 9.17825 12.9604C9.71751 12.9495 10.251 12.8472 10.7563 12.6584C11.6291 12.3203 12.3185 11.632 12.6571 10.7605C12.847 10.256 12.9487 9.72405 12.9596 9.18491C12.9906 8.49152 13 8.27168 13 6.51081C13 4.74994 13 4.5265 12.9596 3.83672C12.9502 3.29036 12.8491 2.74906 12.6557 2.23874ZM11.7764 9.10923C11.7713 9.5244 11.6962 9.93596 11.5519 10.3259C11.3317 10.8932 10.8834 11.3415 10.316 11.5592C9.92975 11.7026 9.5226 11.7776 9.1104 11.7833C8.42459 11.815 8.23112 11.823 6.47257 11.823C4.71257 11.823 4.53282 11.823 3.83402 11.7833C3.42326 11.7783 3.01466 11.7026 2.62916 11.5592C2.05958 11.3422 1.6084 10.8939 1.38822 10.3259C1.24672 9.94101 1.1702 9.53377 1.1637 9.12292C1.13266 8.43818 1.12544 8.24501 1.12544 6.48919C1.12544 4.73265 1.12544 4.55317 1.1637 3.85473C1.16876 3.43957 1.24384 3.02872 1.38822 2.63878C1.6084 2.07008 2.05958 1.62248 2.62916 1.4048C3.01466 1.26209 3.42326 1.1864 3.83402 1.18064C4.52055 1.14965 4.71329 1.141 6.47257 1.141C8.23184 1.141 8.41232 1.141 9.1104 1.18064C9.5226 1.18568 9.92975 1.26137 10.316 1.4048C10.8834 1.6232 11.3317 2.07152 11.5519 2.63878C11.6934 3.02367 11.7699 3.43092 11.7764 3.84176C11.8074 4.52722 11.8154 4.71967 11.8154 6.47621C11.8154 8.23204 11.8154 8.42088 11.7843 9.10995H11.7764V9.10923Z" fill="white"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__copy">
+          &copy; Copyright 2018 Huddle. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </p>
+  </footer> -->
+</body>
+
+</html>
