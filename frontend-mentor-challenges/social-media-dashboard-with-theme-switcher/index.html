@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | [Challenge Name Here]</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="header__texts">
+        <h1 class="header__title">Social Media Dashboard</h1>
+        <p class="header__subtitle">Total Followers: 23,004</p>
+      </div>
+      <div class="header__mode">
+        <label class="header__label" for="toggle-theme">Dark Mode</label>
+        <input class="header__checkbox" id="toggle-theme" type="checkbox" aria-label="Toggle Dark/Light" onclick="changeTheme()">
+        <label class="header__toggle" for="toggle-theme"></label>
+      </div>
+    </div>
+
+    <div class="cards">
+      <div class="card card--facebook">
+        <div class="card__user">
+          <img src="./images/icon-facebook.svg" alt="Facebook" class="card__img">
+          <span class="card__nickname">@nathanf</span>
+        </div>
+
+        <p class="card__number card__number--large">1987</p>
+
+        <p class="card__description">Followers</p>
+
+        <div class="card__position">
+          <img src="./images/icon-up.svg" alt="Up" class="card__icon"> 
+          <span class="card__text card__text--green">12 Today</span>
+        </div>
+      </div>
+
+      <div class="card card--twitter">
+        <div class="card__user">
+          <img src="./images/icon-twitter.svg" alt="Twitter" class="card__img">
+          <span class="card__nickname">@nathanf</span>
+        </div>
+
+        <p class="card__number card__number--large">1044</p>
+
+        <p class="card__description">Followers</p>
+
+        <div class="card__position">
+          <img src="./images/icon-up.svg" alt="Up" class="card__icon"> 
+          <span class="card__text card__text--green">99 Today</span>
+        </div>
+      </div>
+
+      <div class="card card--instagram">
+        <div class="card__user">
+          <img src="./images/icon-instagram.svg" alt="Instagram Image" class="card__img">
+          <span class="card__nickname">@realnathanf</span>
+        </div>
+
+        <p class="card__number card__number--large">11k</p>
+
+        <p class="card__description">Followers</p>
+
+        <div class="card__position">
+          <img src="./images/icon-up.svg" alt="Up" class="card__icon"> 
+          <span class="card__text card__text--green">1099 Today</span>
+        </div>
+      </div>
+
+      <div class="card card--youtube">
+        <div class="card__user">
+          <img src="./images/icon-youtube.svg" alt="Youtube" class="card__img">
+          <span class="card__nickname">Nathan F.</span>
+        </div>
+
+        <p class="card__number card__number--large">8239</p>
+
+        <p class="card__description">Followers</p>
+
+        <div class="card__position">
+          <img src="./images/icon-down.svg" alt="Down" class="card__icon"> 
+          <span class="card__text card__text--red">144 Today</span>
+        </div>
+      </div>
+    </div>
+    
+    <h2 class="overview">Overview - Today</h2>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card__top">
+          <p class="card__title">Page Views</p>
+          <img src="./images/icon-facebook.svg" alt="Facebook">
+        </div>
+        <div class="card__bottom">
+          <p class="card__number card__number--medium">87</p>
+
+          <div class="card__position">
+            <img src="./images/icon-up.svg" alt="Up" class="card__icon"> 
+            <span class="card__text card__text--green">3%</span>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__top">
+          <p class="card__title">Likes</p>
+          <img src="./images/icon-facebook.svg" alt="Facebook">
+        </div>
+        <div class="card__bottom">
+          <p class="card__number card__number--medium">52</p>
+
+          <div class="card__position">
+            <img src="./images/icon-down.svg" alt="Down" class="card__icon"> 
+            <span class="card__text card__text--red">2%</span>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__top">
+          <p class="card__title">Likes</p>
+          <img src="./images/icon-instagram.svg" alt="Instagram">
+        </div>
+        <div class="card__bottom">
+          <p class="card__number card__number--medium">5462</p>
+
+          <div class="card__position">
+            <img src="./images/icon-up.svg" alt="Up" class="card__icon"> 
+            <span class="card__text card__text--green">2257%</span>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__top">
+          <p class="card__title">Profile Views</p>
+          <img src="./images/icon-instagram.svg" alt="Instagram">
+        </div>
+        <div class="card__bottom">
+          <p class="card__number card__number--medium">52k</p>
+
+          <div class="card__position">
+            <img src="./images/icon-up.svg" alt="Up" class="card__icon"> 
+            <span class="card__text card__text--green">1375%</span>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__top">
+          <p class="card__title">Retweets</p>
+          <img src="./images/icon-twitter.svg" alt="Twitter">
+        </div>
+        <div class="card__bottom">
+          <p class="card__number card__number--medium">117</p>
+
+          <div class="card__position">
+            <img src="./images/icon-up.svg" alt="Up" class="card__icon"> 
+            <span class="card__text card__text--green">303%</span>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__top">
+          <p class="card__title">Likes</p>
+          <img src="./images/icon-twitter.svg" alt="Twitter">
+        </div>
+        <div class="card__bottom">
+          <p class="card__number card__number--medium">507</p>
+
+          <div class="card__position">
+            <img src="./images/icon-up.svg" alt="Up" class="card__icon"> 
+            <span class="card__text card__text--green">553%</span>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__top">
+          <p class="card__title">Likes</p>
+          <img src="./images/icon-youtube.svg" alt="Youtube">
+        </div>
+        <div class="card__bottom">
+          <p class="card__number card__number--medium">107</p>
+
+          <div class="card__position">
+            <img src="./images/icon-down.svg" alt="Down" class="card__icon"> 
+            <span class="card__text card__text--red">19%</span>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__top">
+          <p class="card__title">Total Views</p>
+          <img src="./images/icon-youtube.svg" alt="Youtube">
+        </div>
+        <div class="card__bottom">
+          <p class="card__number card__number--medium">1407</p>
+
+          <div class="card__position">
+            <img src="./images/icon-down.svg" alt="Down" class="card__icon"> 
+            <span class="card__text card__text--red">12%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+
+  <script src="script.js"></script>
+</body>
+
+</html>
