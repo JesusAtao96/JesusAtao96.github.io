@@ -78,10 +78,16 @@ body.dark::after {
     clip-path: circle(200% at 100% 0%);
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 .container {
     max-width: 1150px;
     width: 90%;
     margin: 0 auto;
+    overflow-y: auto;
+    height: 100vh;
 }
 
 .header {
