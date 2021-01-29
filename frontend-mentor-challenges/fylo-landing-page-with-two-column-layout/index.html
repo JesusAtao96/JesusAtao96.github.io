@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/style.css" />
+
+  <title>Frontend Mentor | Fylo landing page with two column layout</title>
+</head>
+
+<body>
+  <header class="header">
+    <img class="header__logo" src="./images/logo.svg" alt="Logo" />
+
+    <nav class="header__navigation">
+      <ul class="header__links">
+        <li class="header__link">
+          <a class="header__anchor" href="#">Features</a>
+        </li>
+        <li class="header__link">
+          <a class="header__anchor" href="#">Team</a>
+        </li>
+        <li class="header__link">
+          <a class="header__anchor" href="#">Sign In</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="file">
+      <div class="file__content">
+        <h2 class="file__title">All your files in one secure location, accessible anywhere.</h2>
+        <p class="file__description">
+          Fylo stores your most important files in one secure location.
+          Access them wherever you need, share and collaborate with friends,
+          family, and co-workers.
+        </p>
+
+        <form id="form-1" class="file__form">
+          <div class="file__group">
+            <input type="text" class="file__input" placeholder="Enter your email...">
+            <span class="file__error">Please check your email</span>
+          </div>
+          <button class="file__btn">Get Started</button>
+        </form>
+      </div>
+      <div class="file__img"></div>
+    </section>
+
+    <section class="productive">
+      <div class="productive__content">
+        <h2 class="productive__title">Stay productive, wherever you are</h2>
+        <p class="productive__description">
+          Never let location be an issue when accessing your files. Fylo has you
+          covered for all of your file storage needs.
+        </p>
+        <p class="productive__description">
+          Securely share files and folders with friends, family and colleagues for
+          live collaboration. No email attachments required!
+        </p>
+        <a href="#" class="productive__link">See how Fylo works <svg width="16" height="16"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+              <circle id="b" cx="6" cy="6" r="6" />
+              <filter x="-25%" y="-25%" width="150%" height="150%" filterUnits="objectBoundingBox" id="a">
+                <feOffset in="SourceAlpha" result="shadowOffsetOuter1" />
+                <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
+                <feColorMatrix values="0 0 0 0 0.239215686 0 0 0 0 0.62745098 0 0 0 0 0.560784314 0 0 0 0.793506567 0"
+                  in="shadowBlurOuter1" />
+              </filter>
+            </defs>
+            <g fill="none" fill-rule="evenodd">
+              <g transform="translate(2 2)">
+                <use fill="#000" filter="url(#a)" xlink:href="#b" />
+                <use fill="#3DA08F" xlink:href="#b" />
+              </g>
+              <path d="M8.582 6l-.363.35 1.452 1.4H5.333v.5h4.338L8.22 9.65l.363.35 2.074-2z" fill="#FFF" />
+            </g>
+          </svg></a>
+        <div class="productive__card">
+          <img class="productive__quote" src="./images/icon-quotes.svg" alt="Quote">
+          <p class="productive__testimonial">
+            Fylo has improved our team productivity by an order of magnitude. Since
+            making the switch our team has become a well-oiled collaboration machine.
+          </p>
+          <div class="productive__info">
+            <img src="./images/avatar-testimonial.jpg" alt="Avatar" class="productive__picture">
+            <div class="productive__personal">
+              <span class="productive__user">Kyle Burton</span>
+              <span class="productive__position">Founder & CEO, Huddle</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="productive__img"></div>
+    </section>
+
+    <section class="early">
+      <div class="early__content">
+        <h2 class="early__title">Get early access today</h2>
+        <p class="early__description">
+          It only takes a minute to sign up and our free starter tier is extremely generous.
+          If you have any questions, our support team would be happy to help you.
+        </p>
+      </div>
+      <form id="form-2" class="early__form">
+        <div class="early__group">
+          <input type="text" class="early__input" placeholder="email@example.com">
+          <span class="early__error">Please check your email</span>
+        </div>
+        <button class="early__btn">Get Started For Free</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <img class="footer__logo" src="./images/logo-white.svg" alt="Logo" />
+
+    <div class="footer__contacts">
+      <span class="footer__contact">
+        <img class="footer__icon" src="./images/icon-phone.svg" alt="Phone" /> Phone: +1-543-123-4567
+      </span>
+      <span class="footer__contact">
+        <img class="footer__icon" src="./images/icon-email.svg" alt="Email" /> example@fylo.com
+      </span>
+    </div>
+
+    <ul class="footer__links footer__links--1">
+      <li class="footer__link">
+        <a class="footer__anchor" href="#">About Us</a>
+      </li>
+      <li class="footer__link">
+        <a class="footer__anchor" href="#">Jobs</a>
+      </li>
+      <li class="footer__link">
+        <a class="footer__anchor" href="#">Press</a>
+      </li>
+      <li class="footer__link">
+        <a class="footer__anchor" href="#">Blog</a>
+      </li>
+    </ul>
+
+    <ul class="footer__links footer__links--2">
+      <li class="footer__link">
+        <a class="footer__anchor" href="#">Contact Us</a>
+      </li>
+      <li class="footer__link">
+        <a class="footer__anchor" href="#">Terms</a>
+      </li>
+      <li class="footer__link">
+        <a class="footer__anchor" href="#">Privacy</a>
+      </li>
+    </ul>
+
+    <div class="footer__socials">
+      <div class="footer__social">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M13.397 20.9972V12.8011H16.162L16.573 9.59215H13.397V7.54815C13.397 6.62215 13.655 5.98815 14.984 5.98815H16.668V3.12715C15.849 3.03915 15.025 2.99715 14.201 3.00015C11.757 3.00015 10.079 4.49215 10.079 7.23115V9.58615H7.33203V12.7951H10.085V20.9972H13.397Z"
+            fill="white"></path>
+        </svg>
+      </div>
+
+      <div class="footer__social">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M19.633 7.99704C19.646 8.17204 19.646 8.34604 19.646 8.52004C19.646 13.845 15.593 19.981 8.186 19.981C5.904 19.981 3.784 19.32 2 18.172C2.324 18.209 2.636 18.222 2.973 18.222C4.856 18.222 6.589 17.586 7.974 16.501C6.203 16.464 4.719 15.304 4.207 13.708C4.456 13.745 4.706 13.77 4.968 13.77C5.329 13.77 5.692 13.72 6.029 13.633C4.182 13.259 2.799 11.638 2.799 9.68004V9.63004C3.336 9.92904 3.959 10.116 4.619 10.141C3.534 9.41904 2.823 8.18404 2.823 6.78704C2.823 6.03904 3.022 5.35304 3.371 4.75504C5.354 7.19804 8.335 8.79504 11.677 8.97004C11.615 8.67004 11.577 8.35904 11.577 8.04704C11.577 5.82704 13.373 4.01904 15.605 4.01904C16.765 4.01904 17.812 4.50504 18.548 5.29104C19.458 5.11604 20.33 4.77904 21.104 4.31804C20.805 5.25304 20.168 6.03904 19.333 6.53804C20.144 6.45004 20.93 6.22604 21.652 5.91404C21.104 6.71204 20.419 7.42304 19.633 7.99704Z"
+            fill="white"></path>
+        </svg>
+      </div>
+
+      <div class="footer__social">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M17 2H7C4.23858 2 2 4.23858 2 7V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V7C22 4.23858 19.7614 2 17 2Z"
+            stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path
+            d="M16 11.3701C16.1234 12.2023 15.9812 13.0523 15.5937 13.7991C15.2062 14.5459 14.5931 15.1515 13.8416 15.5297C13.0901 15.908 12.2384 16.0397 11.4077 15.906C10.5771 15.7723 9.80971 15.3801 9.21479 14.7852C8.61987 14.1903 8.22768 13.4229 8.09402 12.5923C7.96035 11.7616 8.09202 10.91 8.47028 10.1584C8.84854 9.40691 9.45414 8.7938 10.2009 8.4063C10.9477 8.0188 11.7977 7.87665 12.63 8.00006C13.4789 8.12594 14.2648 8.52152 14.8716 9.12836C15.4785 9.73521 15.8741 10.5211 16 11.3701Z"
+            stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path d="M17.5 6.5H17.51" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          </path>
+        </svg>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
